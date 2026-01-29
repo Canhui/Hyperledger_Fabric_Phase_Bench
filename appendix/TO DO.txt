@@ -13,3 +13,5 @@ Prepare the ccp materials
 Prepare the ccp materials around 2 hours
 
 Finish the courses
+
+Complete the fuzz courses
