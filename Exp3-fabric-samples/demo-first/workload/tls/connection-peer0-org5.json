@@ -1,0 +1,34 @@
+{
+    "name": "test-network-org1",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org5",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Org5": {
+            "mspid": "Org5MSP",
+            "peers": [
+                "peer0.org5.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.org5.example.com": {
+            "url": "grpcs://peer0.org5.example.com:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICVzCCAf2gAwIBAgIQcBjGomo0gfsjGOTGyNmSHjAKBggqhkjOPQQDAjB2MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnNS5leGFtcGxlLmNvbTEfMB0GA1UEAxMWdGxz\nY2Eub3JnNS5leGFtcGxlLmNvbTAeFw0yNjA0MjAwOTI1MDBaFw0zNjA0MTcwOTI1\nMDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH\nEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmc1LmV4YW1wbGUuY29tMR8wHQYD\nVQQDExZ0bHNjYS5vcmc1LmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEjLCnnOXymZgJYVzLXRmYSvDBpndAphsv08G+uLpeilfgmu2HX+SsVhT0\nJ63TlaZKY/Oh+YoBHutdrBD3FXG9CqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud\nJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud\nDgQiBCArpkwlWXlP8f02oJ3K/lIapM6br//o/CW6JhiEgQD+NTAKBggqhkjOPQQD\nAgNIADBFAiB7galPk/CZbC/J7rWak1C9H34M13/7c/rUyPkPaS9uJwIhAIwCgs2q\nSivdhMiVFOJzIqDlr1yD+1DTBFgfc7zsiUW+\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.org5.example.com",
+                "hostnameOverride": "peer0.org5.example.com"
+            }
+        }
+    }
+}
