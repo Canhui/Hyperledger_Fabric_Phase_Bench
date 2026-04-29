@@ -1,1 +1,0 @@
-https://stackoverflow.com/questions/68971973/calculate-merkle-root-from-2-transaction
