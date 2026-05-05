@@ -15,7 +15,6 @@ Please see section 3, 4, 5 in the guidance.
 Please see section 6 in the guidance.
 
 #### Reference
-[1. Hyperledger Fabric] This is the reference 
-
+[1. Hyperledger Fabric] This is the reference <br>
 [2. Fabric Network] This is the reference
 
