@@ -1,4 +1,4 @@
-## 1. Prepare Multiple Computing Nodes on the Cloud
+#### 1. Prepare Multiple Computing Nodes on the Cloud
 
 Please see section 1 in the guidance.
 
