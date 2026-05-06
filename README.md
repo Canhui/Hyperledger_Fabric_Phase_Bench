@@ -1,24 +1,24 @@
-### 1. Prepare Multiple Computing Nodes on the Cloud
+### 1. Environment Preparation
 
-Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
-
-<br />
-
-### 2. Test Hyperledger Fabric on Each Single Node
-
-Please see section 2 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
+Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for preparation of multiple computing nodes on the cloud.
 
 <br />
 
-### 3. Test Hyperledger Fabric on Multiple Nodes
+### 2. Single Node Test
 
-Please see section 3, 4, 5 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
+Please see section 2 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for single node test of Hyperledger Fabric.
 
 <br />
 
-### 4. Run Hyperledger Fabric on Multipel Nodes
+### 3. Multiple Nodes Test
 
-Please see section 6 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
+Please see section 3, 4, 5 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for multiple nodes test of Hyperledger Fabric.
+
+<br />
+
+### 4. Run Multipel Nodes
+
+Please see section 6 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for running multiple nodes of Hyperledger Fabric, e.g., 7 CLI on 7 endorsing peers, 1 non-endorsing peer, 15 ordering service nodes.
 
 <br />
 
