@@ -2,6 +2,7 @@
 
 Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
 
+<br />
 
 #### 2. Test Hyperledger Fabric on Each Single Node
 
