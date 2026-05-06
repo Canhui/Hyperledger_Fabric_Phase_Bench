@@ -1,6 +1,5 @@
 #### 1. Prepare Multiple Computing Nodes on the Cloud
 
-<<<<<<< HEAD
 Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
 
 <br />
@@ -10,21 +9,18 @@ Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.
 Please see section 2 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
 
 <br />
-=======
-Please see section 1 in the guidance. This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s This s 
-
-#### 2. Test Hyperledger Fabric on Each Single Node
-
-Please see section 2 in the guidance. 
->>>>>>> c887720fc481435763b56d57da86a1f0c44da064
 
 #### 3. Test Hyperledger Fabric on Multiple Nodes
 
 Please see section 3, 4, 5 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
 
+<br />
+
 #### 4. Run Hyperledger Fabric on Multipel Nodes
 
 Please see section 6 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com).
+
+<br />
 
 #### Reference
 [1. Hyperledger Fabric] https://github.com/hyperledger/fabric/tree/v2.2.0 <br>
