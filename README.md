@@ -22,6 +22,24 @@ Please see section 6 in the [guidance.doc](https://www.reference.com)/[guidance.
 
 <br />
 
+### 5. Dynamic Adjustment of Block Parameters
+
+Please see section 7 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for dynamic adjustment of block parameters on single ordering service node; section 8 for dynamic adjustment of block parameters on multiple ordering service nodes; section 9 for dynamic adjustment of block parameters on single peer; and section 10 for dynamic adjustment of block parameters on multiple peers.
+
+<br />
+
+### 6. Different Transaction Payoff Sizes 
+
+Please see section 11 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for different transaction payoff sizes.
+
+<br />
+
+### 7. Different Chaincodes 
+
+Please see section 12 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for different chaincodes.
+
+<br />
+
 ### Reference
 [1. Hyperledger Fabric] https://github.com/hyperledger/fabric/tree/v2.2.0 <br>
 [2. Hyperledger Fabric Dynamic Channel Update] https://hyperledger-fabric.readthedocs.io/en/release-2.2/config_update.html <br>
