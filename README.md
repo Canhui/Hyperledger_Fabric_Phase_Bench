@@ -22,6 +22,7 @@ Please see section 4 in the [guidance.doc](https://www.reference.com)/[guidance.
 
 Please see section 5 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for dynamic adjustment of block parameters on single ordering service node; section 6 for dynamic adjustment of block parameters on multiple ordering service nodes; section 7 for dynamic adjustment of block parameters on single peer; and section 8 for dynamic adjustment of block parameters on multiple peers.
 
+
 ### 6. Different Transaction Payoff Sizes 
 
 Please see section 9 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for different transaction payoff sizes.
@@ -30,6 +31,11 @@ Please see section 9 in the [guidance.doc](https://www.reference.com)/[guidance.
 ### 7. Different Chaincodes 
 
 Please see section 10 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for different chaincodes.
+
+
+### 8. License
+
+Fabric Phase Bench source code is available under the MIT License.
 
 
 ### Reference
