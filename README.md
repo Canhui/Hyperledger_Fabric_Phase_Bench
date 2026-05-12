@@ -33,7 +33,7 @@ Please see section 9 in the [guidance.doc](https://www.reference.com)/[guidance.
 Please see section 10 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for different chaincodes.
 
 
-### 8. License
+### License
 
 Fabric Phase Bench source code is available under the MIT License.
 
