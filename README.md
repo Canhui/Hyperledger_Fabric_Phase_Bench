@@ -1,6 +1,4 @@
 ### 1. Environment Preparation
----
-
 
 Please see section A in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for preparation of multiple computing nodes on the cloud.
 
