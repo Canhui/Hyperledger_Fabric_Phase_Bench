@@ -4,12 +4,12 @@ Please find the Hands-on Tutorial in [MS Doc](https://www.reference.com) or in [
 
 ## 2. Preparation
 
-### 2.1. Cluster Environment
+#### 2.1. Cluster Environment
 
 Please see section A of the tutorial for preparation of multiple computing nodes on the cloud.
 
 
-### 2.2. Single-Node Test
+#### 2.2. Single-Node Test
 
 Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.
 
