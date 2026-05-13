@@ -102,45 +102,7 @@ Please see section 10 of the tutorial for different chaincodes.
 | 4    | 1446            | 780     | 0.4635   | 0.0013  | 0.0000      | 0.0002           | 0.0002            | 0.4136 $\pm$ 0.1778 | 163.8812 | 139.4768 | 0.4134 $\pm$ 0.1778  | 163.9604   | 139.5167 | 0.4134 $\pm$ 0.1778    | 163.9604     | 139.5076 | 0.4149 $\pm$ 0.1778 | 0.4873    | 0.4873        | 0.4874          |
 | 4    | 1478            | 780     | 0.4737   | 0.0013  | 0.0000      | 0.0002           | 0.0002            | 0.5309 $\pm$ 0.2986 | 130.4977 | 139.4768 | 0.5307 $\pm$ 0.2986  | 130.5469   | 139.5167 | 0.5307 $\pm$ 0.2986    | 130.5469     | 139.5076 | 0.5322 $\pm$ 0.2986 | 0.4980    | 0.4981        | 0.4981          |
 
-Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU core(s) in cluster 1. It validates the performance mode of throughput and latency in the execute phase. The maximum throughput of an endorsing peer with a single CPU, i.e., $c=1$, is $\mu^e=780$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0013$ seconds. 
 
-We use two examples to explain the details. 
-
-Communication Latency Calculations (Example One):
-
-In example one, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. 
-
-
-<ul>
-  <li> Performance Metric 1 $\lambda^e=209$
-    <ul>
-      <li>For invoke a transaction, please see invoke.js under the workload folder $\lambda^e=209$.</li>
-      <li>For query a transaction, please see query.js under the worklaod folder.</li>
-    </ul>
-  </li>
-
-  <li> Q2: How to generate some transactions using a client?
-    <ul>
-      <li>For invoke some transactions, please see ssh.sh under the workload folder.</li>
-      <li>For query some transactions, please see ssh.sh under the worklaod folder.</li>
-    </ul>
-  </li>
-
-  <li> Q3: How to stably generate many transactions using many clients?
-    <ul>
-      <li>For stably invoke many transactions, please see ssh.sh under the workload folder.</li>
-      <li>For stably query many transactions, please see ssh.sh under the worklaod folder.</li>
-    </ul>
-  </li>
-</ul>
-
-
-
-
-
-
-
- It validates the model of throughput and latency in the execute phase. The maximum throughput of an endorsing peer with a single CPU core is $\mu^e=780$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0013$ seconds. We use two examples to explain the table. In example one, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. 
 
 
 
@@ -163,7 +125,7 @@ In example one, let the number of CPU cores $c=1$ and the transaction arrival ra
 
 ## License
 
-Fabric_Phase_Bench source code is available under the MIT License 2026.
+Fabric_Phase_Bench source code is available under the MIT License.
 
 
 ## Reference
