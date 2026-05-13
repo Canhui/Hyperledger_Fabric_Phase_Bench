@@ -72,6 +72,8 @@ Please see section 10 of the tutorial for different chaincodes.
 
 #### 4.1. Execute Phase in Cluster 1
 
+<p align="center">Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1</p>
+
 Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1
 
 |      | Measure derived |         |          |         |             |                  |                   | Measure             |          |          |                      |            |          |                        |              |          |                     | Our Model |               |                 |
