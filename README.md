@@ -71,7 +71,7 @@ Please see section 10 of the tutorial for different chaincodes.
 
 #### 4.1. Execute Phase in Cluster 1
 
-<p align="center">Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1</p>
+Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1
 
 |      | Measure derived |         |          |         |             |                  |                   | Measure             |          |          |                      |            |          |                        |              |          |                     | Our Model |               |                 |
 | ---- | --------------- | ------- | -------- | ------- | ----------- | ---------------- | ----------------- | ------------------- | -------- | -------- | -------------------- | ---------- | -------- | ---------------------- | ------------ | -------- | ------------------- | --------- | ------------- | --------------- |
@@ -107,70 +107,51 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
   <li> Performance metric - $c$
     <ul>
-      <li> Definition: The number of CPU cores in the execute phase.</li>
+      <li> Explanation: The number of CPU cores in the execute phase.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\lambda^e$
     <ul>
-      <li> Definition: The transaction arrival rate in transactions per second in the execute phase.</li>
+      <li> Explanation: The transaction arrival rate in transactions per second in the execute phase.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\mu^e$
     <ul>
-      <li> Definition: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
+      <li> Explanation: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
       <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\rho^e$
     <ul>
-      <li> Definition: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
+      <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
       <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
     </ul>
   </li>
 
   <li> Performance metric - $T_s^e$
     <ul>
-      <li> Definition: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
+      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
     </ul>
   </li>
 
   <li> Performance metric - $T_q^e$
     <ul>
-      <li> Definition: The queueing latency of a transaction in the execute phase.</li>
+      <li> Explanation: The queueing latency of a transaction in the execute phase.</li>
     </ul>
   </li>
 
   <li> Performance metric - $T_{comm}^e$
     <ul>
-      <li> Definition: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
+      <li> Explanation: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
+      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=29.8184$ Mbps, from which the model has an overall latency $T^e=0.3307$ seconds.</li>
+      <li> Example 2: The number of CPU cores $c=2$ and the transaction arrival rate $\lambda^e=426$ transactions per second, we have the queueing latency $T_q^e=0.0007$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2407$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2387$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=82.4838$ Mbps, from which the model has an overall latency $T^e=0.2441$ seconds.</li>
     </ul>
   </li>
 
 </ul>
-
-
-The maximum throughput of an endorsing peer with a single CPU, i.e., $c=1$, is $\mu^e=780$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0013$ seconds. 
-
-We use two examples to explain the details. 
-
-Communication Latency Calculations (Example One):
-
-In example one, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. 
-
-
-
-
-
-
-
-
-
-
- It validates the model of throughput and latency in the execute phase. The maximum throughput of an endorsing peer with a single CPU core is $\mu^e=780$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0013$ seconds. We use two examples to explain the table. In example one, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. 
-
 
 
 
