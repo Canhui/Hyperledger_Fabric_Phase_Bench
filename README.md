@@ -134,6 +134,7 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
   <li> Performance metric - $T_s^e$
     <ul>
       <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e$.</li>
+      <li> Example 1: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e=1/780=0.0013$ seconds.</li>
     </ul>
   </li>
 
@@ -186,7 +187,6 @@ Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
 <ul>
 
-
   <li> Performance metric - $c$
     <ul>
       <li> Explanation: The number of CPU cores in the execute phase.</li>
@@ -209,14 +209,14 @@ Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
   <li> Performance metric - $\rho^e$
     <ul>
       <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second,  $\lambda^e=209$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=209/(1*780)=0.2679$.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=470$ transactions per second,  $\lambda^e=214$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=214/(1*470)=0.4553$.</li>
     </ul>
-
   </li>
 
   <li> Performance metric - $T_s^e$
     <ul>
-      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
+      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e$.</li>
+      <li> Example 1: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e=1/470=0.0021$ seconds.</li>
     </ul>
   </li>
 
@@ -229,8 +229,8 @@ Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
   <li> Performance metric - $T_{comm}^e$
     <ul>
       <li> Explanation: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
-      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=29.3380$ Mbps, from which the model has an overall latency $T^e=0.3354$ seconds.</li>
-      <li> Example 2: The number of CPU cores $c=2$ and the transaction arrival rate $\lambda^e=426$ transactions per second, we have the queueing latency $T_q^e=0.0006$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2407$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2388$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=79.5231$ Mbps, from which the model has an overall latency $T^e=0.2530$ seconds.</li>
+      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=214$ transactions per second. We then have the queueing latency $T_q^e=0.0009$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2155$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2125$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=42.5357$ Mbps, from which the model has an overall latency $T^e=0.2388$ seconds.</li>
+      <li> Example 2: The number of CPU cores be $c=2$ and the transaction arrival rate be $\lambda^e=244$ transactions per second; we have the queueing latency $T_q^e=0.0000$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.0900$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.0879$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=133.7755$ Mbps, from which the model has an overall latency $T^e=0.0876$ seconds.</li>
     </ul>
   </li>
 
@@ -242,7 +242,8 @@ Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
 
 
-Table 2 shows the throughput and latency of an endorsing peer with $c=1,2,4$ CPU core(s) in the cloud cluster. It validates the model of throughput and latency in the execute phase. The maximum throughput of an endorsing peer with a single CPU core is $\mu^e=470$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0021$ seconds. We use two examples to explain the table. In Example 1, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=214$ transactions per second. We then have the queueing latency $T_q^e=0.0020$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2155$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2114$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=43.2167$ Mbps, from which the model has an overall latency $T^e=0.2362$ seconds. In Example 2, let the number of CPU cores be $c=2$ and the transaction arrival rate be $\lambda^e=244$ transactions per second; we have the queueing latency $T_q^e=0.0013$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.0900$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.0866$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=135.6649$ Mbps, from which the model has an overall latency $T^e=0.0877$ seconds. 
+
+
 
 
 
