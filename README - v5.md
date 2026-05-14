@@ -106,36 +106,12 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
 
 <ul>
-
-  <li> Performance metric - $c$
+  <li> Performance metric $\mu^e$
     <ul>
-      <li> Definition: The number of CPU cores.</li>
+      <li> Definition: For invoke a transaction, please see invoke.js under the workload folder $\lambda^e=209$.</li>
+      <li> Example: For query a transaction, please see query.js under the worklaod folder.</li>
     </ul>
   </li>
-
-  <li> Performance metric - $\lambda^e$
-    <ul>
-      <li> Definition: The transaction arrival rate in transactions per second.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\mu^e$
-    <ul>
-      <li> Definition: The maximum throughput of an endorsing peer with a single CPU core.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\rho^e$
-    <ul>
-      <li> Definition: The utilization of an endorsing peer, where $\rho^e=\lambda^e/(c\mu^e)$.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
-    </ul>
-  </li>
-
-
-
-
 
   <li> Q2: How to generate some transactions using a client?
     <ul>
@@ -150,8 +126,6 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
       <li>For stably query many transactions, please see ssh.sh under the worklaod folder.</li>
     </ul>
   </li>
-
-  
 </ul>
 
 
