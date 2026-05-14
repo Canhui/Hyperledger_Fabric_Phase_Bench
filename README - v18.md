@@ -579,51 +579,6 @@ Table 7. The effects of an HDD of 63 IOps on the throughput and latency in the v
 | 50        | 109             | 185     | 0.5795   | 0.0054  | 0.2573 $\pm$ 0.0619 | 9.9288  | 10.2041 | 0.2522 $\pm$ 0.0619  | 10.1296    | 10.4442 | 0.2542 $\pm$ 0.0619    | 10.0499      | 10.3204 | 0.0027 $\pm$ 0.0003 | 0.0078            | 0.0058              | 0.2654 $\pm$ 0.0619 | 0.2585    | 0.2578        | 0.2587          |
 | 50        | 142             | 185     | 0.7676   | 0.0054  | 0.2408 $\pm$ 0.0412 | 13.8211 | 10.2041 | 0.2334 $\pm$ 0.0412  | 14.2593    | 10.4442 | 0.2379 $\pm$ 0.0412    | 13.9896      | 10.3204 | 0.0105 $\pm$ 0.0020 | 0.0179            | 0.0134              | 0.2567 $\pm$ 0.0403 | 0.3421    | 0.3420        | 0.3413          |
 
-Table 6 shows the effects of an HDD of 63 IOs per second on the throughput and latency in the validate phase. There is a committing peer in the local cluster of a 1 Gbit/s Ethernet network. The BatchSize is 20, 50, respectively, and the BatchTimeout is 1. It validates the model of throughput and latency of a committing peer in the validate phase. The details of performance metrics are as follows:
-
-<ul>
-
-  <li> Performance metric - $\lambda^v$
-    <ul>
-      <li> Explanation: The transaction arrival rate in transactions per second in the validate phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\mu^v$
-    <ul>
-      <li> Explanation: The maximum throughput of a committing peer in the validate phase.</li>
-      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 20 is $\mu^v=85$ transactions per second.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\rho^v$
-    <ul>
-      <li> Explanation: The utilization of a committing peer in the validate phase, where we can derive $\rho^v=\lambda^v/ \mu^v$.</li>
-      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 20 in the validate phase is $\mu^v=85$, $\lambda^v=65$ transactions per second, and hence $\rho^v=\lambda^v/ \mu^v=65/85=0.7647$.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_s^v$
-    <ul>
-      <li> Explanation: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v$.</li>
-      <li> Example 1: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v=1/85=0.0118$ seconds.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_q^v$
-    <ul>
-      <li> Explanation: The queueing latency of a transaction in the validate phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_{comm}^v$
-    <ul>
-      <li> Explanation: The communication latency spent in the validate phase.</li>
-      <li> Example 1: The transaction arrival rate $\lambda^v=65$ transactions per second, we have the queueing latency $T_q^v=0.0224$ seconds. We measure the overall latency of a transaction spent in the validate phase $T^v=0.6361$ seconds. And when a BatchSize of 20, the average effective network bandwidth is stable around $\beta^v=2.9901$ Mbps, from which the model has an overall latency $T^v=0.5437$ seconds.</li>
-    </ul>
-  </li>
-
-</ul>
 
 
 
