@@ -133,7 +133,7 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
   <li> Performance metric - $T_s^e$
     <ul>
-      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
+      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1\ \mu^e$.</li>
     </ul>
   </li>
 
