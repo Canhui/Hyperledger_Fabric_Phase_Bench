@@ -127,7 +127,7 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
   <li> Performance metric - $\rho^e$
     <ul>
       <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second,  $\lambda^e=209$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=209/(1*780)=0.2679$.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
     </ul>
   </li>
 
@@ -154,95 +154,6 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 </ul>
 
 
-#### 4.2. Execute Phase in Cluster 2
-
-Table 2. The throughput and latency of an endorsing peer with $c=$1,2,4 CPU cores in cluster 2.
-
-|      | Measure derived |         |          |         |             |                 |                   | Measure             |          |          |                      |            |          |                        |              |          |                     | Our model |               |                 |
-| ---- | --------------- | ------- | -------- | ------- | ----------- | --------------- | ----------------- | ------------------- | -------- | -------- | -------------------- | ---------- | -------- | ---------------------- | ------------ | -------- | ------------------- | --------- | ------------- | --------------- |
-| $c$  | $\lambda^e$     | $\mu^e$ | $\rho^e$ | $T_s^e$ | Our $T_q^e$ | $M/M/1$ $T_q^e$ | $M/H_2/1$ $T_q^e$ | Our $T_{comm}^e$    | Our BW   | avg BW   | $M/M/1$ $T_{comm}^e$ | $M/M/1$ BW | avg BW   | $M/H_2/1$ $T_{comm}^e$ | $M/H_2/1$ BW | avg BW   | $T^e$               | Our $T^e$ | $M/M/1$ $T^e$ | $M/H_2/1$ $T^e$ |
-| 1    | 214             | 470     | 0.4553   | 0.0021  | 0.0009      | 0.0018          | 0.0013            | 0.2125 $\pm$ 0.0128 | 47.2059  | 42.5357  | 0.2116 $\pm$ 0.0128  | 47.4067    | 43.4146  | 0.2121 $\pm$ 0.0128    | 47.2949      | 42.9619  | 0.2155 $\pm$ 0.0128 | 0.2388    | 0.2350        | 0.2369          |
-| 1    | 244             | 470     | 0.5191   | 0.0021  | 0.0011      | 0.0023          | 0.0017            | 0.2446 $\pm$ 0.0359 | 46.7600  | 42.5357  | 0.2434 $\pm$ 0.0359  | 46.9906    | 43.4146  | 0.2440 $\pm$ 0.0359    | 46.8750      | 42.9619  | 0.2478 $\pm$ 0.0359 | 0.2721    | 0.2678        | 0.2700          |
-| 1    | 312             | 470     | 0.6638   | 0.0021  | 0.0021      | 0.0042          | 0.0032            | 0.3178 $\pm$ 0.0241 | 46.0195  | 42.5357  | 0.3157 $\pm$ 0.0241  | 46.3256    | 43.4146  | 0.3167 $\pm$ 0.0241    | 46.1793      | 42.9619  | 0.3220 $\pm$ 0.0241 | 0.3480    | 0.3432        | 0.3457          |
-| 1    | 352             | 470     | 0.7489   | 0.0021  | 0.0032      | 0.0063          | 0.0048            | 0.4165 $\pm$ 0.0764 | 39.6158  | 42.5357  | 0.4134 $\pm$ 0.0764  | 39.9129    | 43.4146  | 0.4149 $\pm$ 0.0764    | 39.7686      | 42.9619  | 0.4218 $\pm$ 0.0764 | 0.3932    | 0.3885        | 0.3910          |
-| 1    | 423             | 470     | 0.9000   | 0.0021  | 0.0096      | 0.0191          | 0.0144            | 0.5234 $\pm$ 0.0772 | 37.8833  | 42.5357  | 0.5139 $\pm$ 0.0772  | 38.5836    | 43.4146  | 0.5186 $\pm$ 0.0772    | 38.2339      | 42.9619  | 0.5351 $\pm$ 0.0772 | 0.4779    | 0.4779        | 0.4780          |
-| 1    | 460             | 470     | 0.9787   | 0.0021  | 0.0489      | 0.0979          | 0.0734            | 0.5715 $\pm$ 0.0610 | 37.7297  | 42.5357  | 0.5225 $\pm$ 0.0610  | 41.2679    | 43.4146  | 0.547 $\pm$ 0.0610     | 39.4196      | 42.9619  | 0.6225 $\pm$ 0.0610 | 0.5579    | 0.5967        | 0.5774          |
-| 2    | 244             | 470     | 0.2596   | 0.0021  | 0.0000      | 0.0003          | 0.0002            | 0.0879 $\pm$ 0.0036 | 130.1195 | 133.7755 | 0.0876 $\pm$ 0.0036  | 130.5651   | 134.3903 | 0.0877 $\pm$ 0.0036    | 130.4162     | 134.1423 | 0.0900 $\pm$ 0.0036 | 0.0876    | 0.0875        | 0.0876          |
-| 2    | 312             | 470     | 0.3319   | 0.0021  | 0.0001      | 0.0005          | 0.0003            | 0.1052 $\pm$ 0.0103 | 139.0209 | 133.7755 | 0.1048 $\pm$ 0.0103  | 139.5515   | 134.3903 | 0.105 $\pm$ 0.0103     | 139.2857     | 134.1423 | 0.1074 $\pm$ 0.0103 | 0.1115    | 0.1114        | 0.1114          |
-| 2    | 352             | 470     | 0.3745   | 0.0021  | 0.0001      | 0.0006          | 0.0004            | 0.1278 $\pm$ 0.0125 | 129.1080 | 133.7755 | 0.1273 $\pm$ 0.0125  | 129.6151   | 134.3903 | 0.1275 $\pm$ 0.0125    | 129.4118     | 134.1423 | 0.1300 $\pm$ 0.0125 | 0.1255    | 0.1255        | 0.1255          |
-| 2    | 423             | 470     | 0.4500   | 0.0021  | 0.0002      | 0.0008          | 0.0006            | 0.1663 $\pm$ 0.0085 | 119.2311 | 133.7755 | 0.1657 $\pm$ 0.0085  | 119.6628   | 134.3903 | 0.1659 $\pm$ 0.0085    | 119.5185     | 134.1423 | 0.1686 $\pm$ 0.0085 | 0.1505    | 0.1504        | 0.1505          |
-| 2    | 460             | 470     | 0.4894   | 0.0021  | 0.0003      | 0.0010          | 0.0007            | 0.1709 $\pm$ 0.0180 | 126.1703 | 133.7755 | 0.1702 $\pm$ 0.0180  | 126.6892   | 134.3903 | 0.1705 $\pm$ 0.0180    | 126.4663     | 134.1423 | 0.1733 $\pm$ 0.0180 | 0.1636    | 0.1635        | 0.1635          |
-| 2    | 566             | 470     | 0.6021   | 0.0021  | 0.0006      | 0.0016          | 0.0012            | 0.1908 $\pm$ 0.0160 | 139.0527 | 133.7755 | 0.1898 $\pm$ 0.0160  | 139.7853   | 134.3903 | 0.1902 $\pm$ 0.0160    | 139.4913     | 134.1423 | 0.1935 $\pm$ 0.0160 | 0.2010    | 0.2011        | 0.2011          |
-| 2    | 670             | 470     | 0.7128   | 0.0021  | 0.0011      | 0.0026          | 0.0020            | 0.2043 $\pm$ 0.0136 | 153.7261 | 133.7755 | 0.2028 $\pm$ 0.0136  | 154.8632   | 134.3903 | 0.2034 $\pm$ 0.0136    | 154.4063     | 134.1423 | 0.2075 $\pm$ 0.0136 | 0.2380    | 0.2384        | 0.2382          |
-| 4    | 244             | 470     | 0.1298   | 0.0021  | 0.0000      | 0.0000          | 0.0000            | 0.0685 $\pm$ 0.0019 | 166.9708 | 226.2017 | 0.0685 $\pm$ 0.0019  | 166.9708   | 226.4957 | 0.0685 $\pm$ 0.0019    | 166.9708     | 226.3851 | 0.0706 $\pm$ 0.0019 | 0.0527    | 0.0526        | 0.0526          |
-| 4    | 312             | 470     | 0.1660   | 0.0021  | 0.0000      | 0.0001          | 0.0000            | 0.0753 $\pm$ 0.0045 | 194.2231 | 226.2017 | 0.0752 $\pm$ 0.0045  | 194.4814   | 226.4957 | 0.0753 $\pm$ 0.0045    | 194.2231     | 226.3851 | 0.0774 $\pm$ 0.0045 | 0.0668    | 0.0668        | 0.0667          |
-| 4    | 352             | 470     | 0.1872   | 0.0021  | 0.0000      | 0.0001          | 0.0000            | 0.0767 $\pm$ 0.0040 | 215.1239 | 226.2017 | 0.0766 $\pm$ 0.0040  | 215.4047   | 226.4957 | 0.0767 $\pm$ 0.0040    | 215.1239     | 226.3851 | 0.0788 $\pm$ 0.0040 | 0.0750    | 0.0750        | 0.0750          |
-| 4    | 423             | 470     | 0.2250   | 0.0021  | 0.0000      | 0.0001          | 0.0001            | 0.0796 $\pm$ 0.0038 | 249.0970 | 226.2017 | 0.0795 $\pm$ 0.0038  | 249.4104   | 226.4957 | 0.0795 $\pm$ 0.0038    | 249.4104     | 226.3851 | 0.0817 $\pm$ 0.0038 | 0.0898    | 0.0897        | 0.0898          |
-| 4    | 460             | 470     | 0.2447   | 0.0021  | 0.0000      | 0.0001          | 0.0001            | 0.0922 $\pm$ 0.0060 | 233.8666 | 226.2017 | 0.0921 $\pm$ 0.0060  | 234.1205   | 226.4957 | 0.0921 $\pm$ 0.0060    | 234.1205     | 226.3851 | 0.0943 $\pm$ 0.0060 | 0.0974    | 0.0974        | 0.0974          |
-| 4    | 566             | 470     | 0.3011   | 0.0021  | 0.0000      | 0.0002          | 0.0001            | 0.1065 $\pm$ 0.0030 | 249.1197 | 226.2017 | 0.1063 $\pm$ 0.0030  | 249.5884   | 226.4957 | 0.1064 $\pm$ 0.0030    | 249.3539     | 226.3851 | 0.1086 $\pm$ 0.0030 | 0.1194    | 0.1194        | 0.1194          |
-| 4    | 670             | 470     | 0.3564   | 0.0021  | 0.0000      | 0.0002          | 0.0002            | 0.1142 $\pm$ 0.0090 | 275.0109 | 226.2017 | 0.114 $\pm$ 0.0090   | 275.4934   | 226.4957 | 0.114 $\pm$ 0.0090     | 275.4934     | 226.3851 | 0.1163 $\pm$ 0.0090 | 0.1409    | 0.1410        | 0.1410          |
-
-Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU core(s) in cluster 2. It validates the performance mode of throughput and latency in the execute phase. The details of performance metrics are as follows:
-
-<ul>
-
-
-  <li> Performance metric - $c$
-    <ul>
-      <li> Explanation: The number of CPU cores in the execute phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\lambda^e$
-    <ul>
-      <li> Explanation: The transaction arrival rate in transactions per second in the execute phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\mu^e$
-    <ul>
-      <li> Explanation: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=470$ transactions per second.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\rho^e$
-    <ul>
-      <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
-      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second,  $\lambda^e=209$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=209/(1*780)=0.2679$.</li>
-    </ul>
-
-  </li>
-
-  <li> Performance metric - $T_s^e$
-    <ul>
-      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_q^e$
-    <ul>
-      <li> Explanation: The queueing latency of a transaction in the execute phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_{comm}^e$
-    <ul>
-      <li> Explanation: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
-      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=29.3380$ Mbps, from which the model has an overall latency $T^e=0.3354$ seconds.</li>
-      <li> Example 2: The number of CPU cores $c=2$ and the transaction arrival rate $\lambda^e=426$ transactions per second, we have the queueing latency $T_q^e=0.0006$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2407$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2388$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=79.5231$ Mbps, from which the model has an overall latency $T^e=0.2530$ seconds.</li>
-    </ul>
-  </li>
-
-</ul>
-
-
-
-
-
-
-
-Table 2 shows the throughput and latency of an endorsing peer with $c=1,2,4$ CPU core(s) in the cloud cluster. It validates the model of throughput and latency in the execute phase. The maximum throughput of an endorsing peer with a single CPU core is $\mu^e=470$ transactions per second, meaning that the service time of a transaction is $T_s^e=0.0021$ seconds. We use two examples to explain the table. In Example 1, let the number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=214$ transactions per second. We then have the queueing latency $T_q^e=0.0020$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2155$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2114$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=43.2167$ Mbps, from which the model has an overall latency $T^e=0.2362$ seconds. In Example 2, let the number of CPU cores be $c=2$ and the transaction arrival rate be $\lambda^e=244$ transactions per second; we have the queueing latency $T_q^e=0.0013$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.0900$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.0866$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=135.6649$ Mbps, from which the model has an overall latency $T^e=0.0877$ seconds. 
 
 
 
