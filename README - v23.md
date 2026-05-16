@@ -1,5 +1,5 @@
 ## 1. Hands-on Tutorial
-Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.docx) or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf).
+Please find the Hands-on Tutorial in [MS Doc](https://www.reference.com) or in [PDF](https://www.reference.com).
 
 
 
