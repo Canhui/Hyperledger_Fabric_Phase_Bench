@@ -1,5 +1,5 @@
 ## 1. Hands-on Tutorial
-Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.docx) or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf).
+Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.docx) or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf).
 
 
 
@@ -7,12 +7,12 @@ Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperled
 
 #### 2.1. Cluster Environment
 
-Please see [section A](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for preparation of multiple computing nodes on the cloud.
+Please see [section A](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of multiple computing nodes on the cloud.
 
 
 #### 2.2. Single-Node Test
 
-Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for preparation of single-node test of Hyperledger Fabric network.
+Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of single-node test of Hyperledger Fabric network.
 
 
 #### 2.3. Workload Generator
@@ -46,23 +46,23 @@ Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/
 
 #### 3.1. Multiple-Nodes Test
 
-Please see [section 1, 2, 3](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for multiple-nodes test of Hyperledger Fabric.
+Please see [section 1, 2, 3](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes test of Hyperledger Fabric.
 
 #### 3.2. Multiple-Nodes Run
 
-Please see [section 4](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for multiple-nodes running of Hyperledger Fabric, e.g., 7 CLI on 7 endorsing peers, 1 non-endorsing peer, 15 ordering service nodes.
+Please see [section 4](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes running of Hyperledger Fabric, e.g., 7 CLI on 7 endorsing peers, 1 non-endorsing peer, 15 ordering service nodes.
 
 #### 3.3. Dynamic Adjustment of Block Parameters
 
-Please see [section 5](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for dynamic adjustment of block parameters on single ordering service node; [section 6](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) for dynamic adjustment of block parameters on multiple ordering service nodes; [section 7](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) for dynamic adjustment of block parameters on single peer; and [section 8](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) for dynamic adjustment of block parameters on multiple peers.
+Please see [section 5](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for dynamic adjustment of block parameters on single ordering service node; [section 6](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple ordering service nodes; [section 7](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on single peer; and [section 8](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple peers.
 
 #### 3.4. Different Transaction Payoff Sizes 
 
-Please see [section 9](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for different transaction payoff sizes.
+Please see [section 9](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different transaction payoff sizes.
 
 #### 3.5. Different Chaincodes 
 
-Please see [section 10](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for different chaincodes.
+Please see [section 10](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different chaincodes.
 
 
 

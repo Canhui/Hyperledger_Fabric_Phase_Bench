@@ -1,0 +1,701 @@
+## 1. Hands-on Tutorial
+Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.docx) or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf).
+
+
+
+## 2. Preparation
+
+#### 2.1. Cluster Environment
+
+Please see [section A](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of multiple computing nodes on the cloud.
+
+
+#### 2.2. Single-Node Test
+
+Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of single-node test of Hyperledger Fabric network.
+
+
+#### 2.3. Workload Generator
+
+<ul>
+  <li> Q1: How to generate a transaction via Node.js SDK?
+    <ul>
+      <li>For invoke a transaction, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/sdk-peer0-org1/invoke.js">invoke.js</a> under the workload folder.</li>
+      <li>For query a transaction, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/sdk-peer0-org1/query.js">query.js</a> under the worklaod folder.</li>
+    </ul>
+  </li>
+
+  <li> Q2: How to generate some transactions using a client?
+    <ul>
+      <li>For invoke some transactions, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/ssh.sh">ssh.sh</a> under the workload folder.</li>
+      <li>For query some transactions, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/ssh.sh">ssh.sh</a> under the worklaod folder.</li>
+    </ul>
+  </li>
+
+  <li> Q3: How to stably generate many transactions using many clients?
+    <ul>
+      <li>For stably invoke many transactions, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/ssh.sh">ssh.sh</a> under the workload folder.</li>
+      <li>For stably query many transactions, please see <a href="https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp03-fabric-samples/demo-first/workload/ssh.sh">ssh.sh</a> under the worklaod folder.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+## 3. Experiments
+
+#### 3.1. Multiple-Nodes Test
+
+Please see [section 1, 2, 3](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes test of Hyperledger Fabric.
+
+#### 3.2. Multiple-Nodes Run
+
+Please see [section 4](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes running of Hyperledger Fabric, e.g., 7 CLI on 7 endorsing peers, 1 non-endorsing peer, 15 ordering service nodes.
+
+#### 3.3. Dynamic Adjustment of Block Parameters
+
+Please see [section 5](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for dynamic adjustment of block parameters on single ordering service node; [section 6](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple ordering service nodes; [section 7](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on single peer; and [section 8](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple peers.
+
+#### 3.4. Different Transaction Payoff Sizes 
+
+Please see [section 9](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different transaction payoff sizes.
+
+#### 3.5. Different Chaincodes 
+
+Please see [section 10](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different chaincodes.
+
+
+
+
+## 4. Numerical Calculations and Results
+
+#### 4.1. Execute Phase in Cluster 1
+
+Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1
+
+|      | Measure derived |         |          |         |             |                  |                   | Measure             |          |          |                      |            |          |                        |              |          |                     | Our Model |               |                 |
+| ---- | --------------- | ------- | -------- | ------- | ----------- | ---------------- | ----------------- | ------------------- | -------- | -------- | -------------------- | ---------- | -------- | ---------------------- | ------------ | -------- | ------------------- | --------- | ------------- | --------------- |
+| $c$  | $\lambda^e$     | $\mu^e$ | $\rho^e$ | $T_s^e$ | Our $T_q^e$ | $M/M/1$  $T_q^e$ | $M/H_2/1$ $T_q^e$ | Our $T_{comm}^e$    | Our BW   | avg BW   | $M/M/1$ $T_{comm}^e$ | $M/M/1$ BW | avg BW   | $M/H_2/1$ $T_{comm}^e$ | $M/H_2/1$ BW | avg BW   | $T^e$               | Our $T^e$ | $M/M/1$ $T^e$ | $M/H_2/1$ $T^e$ |
+| 1    | 209             | 780     | 0.2679   | 0.0013  | 0.0002      | 0.0005           | 0.0004            | 0.2837 $\pm$ 0.0103 | 34.5325  | 29.3380  | 0.2834 $\pm$ 0.0103  | 34.5691    | 29.5817  | 0.2835 $\pm$ 0.0103    | 34.5569      | 29.4589  | 0.2852 $\pm$ 0.0103 | 0.3354    | 0.3330        | 0.3343          |
+| 1    | 287             | 780     | 0.3679   | 0.0013  | 0.0004      | 0.0007           | 0.0006            | 0.4116 $\pm$ 0.0145 | 32.6849  | 29.3380  | 0.4113 $\pm$ 0.0145  | 32.7088    | 29.5817  | 0.4114 $\pm$ 0.0145    | 32.7008      | 29.4589  | 0.4133 $\pm$ 0.0145 | 0.4603    | 0.4568        | 0.4586          |
+| 1    | 337             | 780     | 0.4321   | 0.0013  | 0.0005      | 0.0010           | 0.0007            | 0.5830 $\pm$ 0.0291 | 27.0958  | 29.3380  | 0.5825 $\pm$ 0.0291  | 27.1191    | 29.5817  | 0.5828 $\pm$ 0.0291    | 27.1051      | 29.4589  | 0.5848 $\pm$ 0.0291 | 0.5402    | 0.5363        | 0.5382          |
+| 1    | 426             | 780     | 0.5462   | 0.0013  | 0.0007      | 0.0015           | 0.0012            | 0.7667 $\pm$ 0.0741 | 26.0451  | 29.3380  | 0.7659 $\pm$ 0.0741  | 26.0723    | 29.5817  | 0.7662 $\pm$ 0.0741    | 26.0621      | 29.4589  | 0.7687 $\pm$ 0.0741 | 0.6826    | 0.6778        | 0.6804          |
+| 1    | 524             | 780     | 0.6718   | 0.0013  | 0.0013      | 0.0026           | 0.0020            | 0.9018 $\pm$ 0.0904 | 27.2372  | 29.3380  | 0.9005 $\pm$ 0.0904  | 27.2765    | 29.5817  | 0.9011 $\pm$ 0.0904    | 27.2584      | 29.4589  | 0.9044 $\pm$ 0.0904 | 0.8398    | 0.8342        | 0.8371          |
+| 1    | 613             | 780     | 0.7859   | 0.0013  | 0.0024      | 0.0047           | 0.0035            | 1.0863 $\pm$ 0.1982 | 26.4516  | 29.3380  | 1.0840 $\pm$ 0.1982  | 26.5077    | 29.5817  | 1.0852 $\pm$ 0.1982    | 26.4784      | 29.4589  | 1.0900 $\pm$ 0.1982 | 0.9831    | 0.9774        | 0.9802          |
+| 1    | 725             | 780     | 0.9295   | 0.0013  | 0.0084      | 0.0169           | 0.0127            | 1.2250 $\pm$ 0.2908 | 27.7423  | 29.3380  | 1.2165 $\pm$ 0.2908  | 27.9362    | 29.5817  | 1.2207 $\pm$ 0.2908    | 27.8401      | 29.4589  | 1.2347 $\pm$ 0.2908 | 1.1681    | 1.1670        | 1.1676          |
+| 1    | 770             | 780     | 0.9872   | 0.0013  | 0.0494      | 0.0987           | 0.0740            | 1.0966 $\pm$ 0.2199 | 32.9142  | 29.3380  | 1.0473 $\pm$ 0.2199  | 34.4636    | 29.5817  | 1.0720 $\pm$ 0.2199    | 33.6695      | 29.4589  | 1.1473 $\pm$ 0.2199 | 1.2810    | 1.3201        | 1.3005          |
+| 2    | 426             | 780     | 0.2731   | 0.0013  | 0.0006      | 0.0002           | 0.0002            | 0.2388 $\pm$ 0.0173 | 83.6212  | 79.5231  | 0.2392 $\pm$ 0.0173  | 83.4814    | 79.9621  | 0.2392 $\pm$ 0.0173    | 83.4814      | 79.8754  | 0.2407 $\pm$ 0.0173 | 0.2530    | 0.2512        | 0.2515          |
+| 2    | 613             | 780     | 0.3929   | 0.0013  | 0.0001      | 0.0004           | 0.0003            | 0.3319 $\pm$ 0.0173 | 86.5754  | 79.5231  | 0.3316 $\pm$ 0.0173  | 86.6537    | 79.9621  | 0.3317 $\pm$ 0.0173    | 86.6276      | 79.8754  | 0.3333 $\pm$ 0.0573 | 0.3627    | 0.3610        | 0.3613          |
+| 2    | 852             | 780     | 0.5462   | 0.0013  | 0.0003      | 0.0007           | 0.0005            | 0.4754 $\pm$ 0.0173 | 84.0082  | 79.5231  | 0.4750 $\pm$ 0.0173  | 84.0789    | 79.9621  | 0.4752 $\pm$ 0.0173    | 84.0436      | 79.8754  | 0.4770 $\pm$ 0.0928 | 0.5038    | 0.5015        | 0.5018          |
+| 2    | 1095            | 780     | 0.7019   | 0.0013  | 0.0006      | 0.0015           | 0.0011            | 0.7336 $\pm$ 0.0173 | 69.9675  | 79.5231  | 0.7327 $\pm$ 0.0173  | 70.0534    | 79.9621  | 0.7331 $\pm$ 0.0173    | 70.0152      | 79.8754  | 0.7355 $\pm$ 0.1612 | 0.6473    | 0.6447        | 0.6450          |
+| 2    | 1278            | 780     | 0.8192   | 0.0013  | 0.0013      | 0.0029           | 0.0022            | 0.7539 $\pm$ 0.0173 | 79.4618  | 79.5231  | 0.7323 $\pm$ 0.0173  | 81.8056    | 79.9621  | 0.7330 $\pm$ 0.0173    | 81.7275      | 79.8754  | 0.7565 $\pm$ 0.2216 | 0.7559    | 0.7534        | 0.7535          |
+| 2    | 1338            | 780     | 0.8577   | 0.0013  | 0.0018      | 0.0039           | 0.0029            | 0.7817 $\pm$ 0.0173 | 80.2338  | 79.5231  | 0.7796 $\pm$ 0.0173  | 80.4499    | 79.9621  | 0.7806 $\pm$ 0.0173    | 80.3468      | 79.8754  | 0.7848 $\pm$ 0.2273 | 0.7918    | 0.7896        | 0.7894          |
+| 2    | 1446            | 780     | 0.9269   | 0.0013  | 0.0039      | 0.0081           | 0.0061            | 0.8588 $\pm$ 0.0173 | 78.9255  | 79.5231  | 0.8546 $\pm$ 0.0173  | 79.3134    | 79.9621  | 0.8566 $\pm$ 0.0173    | 79.1282      | 79.8754  | 0.8640 $\pm$ 0.2406 | 0.8575    | 0.8571        | 0.8560          |
+| 2    | 1478            | 780     | 0.9474   | 0.0013  | 0.0056      | 0.0116           | 0.0087            | 0.9440 $\pm$ 0.0173 | 73.3912  | 79.5231  | 0.9380 $\pm$ 0.0173  | 73.8606    | 79.9621  | 0.9409 $\pm$ 0.0173    | 73.6330      | 79.8754  | 0.9509 $\pm$ 0.1122 | 0.8781    | 0.8793        | 0.8774          |
+| 4    | 426             | 780     | 0.1365   | 0.0013  | 0.0000      | 0.0000           | 0.0000            | 0.1774 $\pm$ 0.0143 | 112.5634 | 139.4768 | 0.1774 $\pm$ 0.0143  | 112.5634   | 139.5167 | 0.1774 $\pm$ 0.0143    | 112.5634     | 139.5076 | 0.1787 $\pm$ 0.0143 | 0.1445    | 0.1444        | 0.1444          |
+| 4    | 613             | 780     | 0.1965   | 0.0013  | 0.0000      | 0.0000           | 0.0000            | 0.2162 $\pm$ 0.0277 | 132.9065 | 139.4768 | 0.2162 $\pm$ 0.0277  | 132.9065   | 139.5167 | 0.2162 $\pm$ 0.0277    | 132.9065     | 139.5076 | 0.2175 $\pm$ 0.0277 | 0.2073    | 0.2073        | 0.2073          |
+| 4    | 852             | 780     | 0.2731   | 0.0013  | 0.0000      | 0.0000           | 0.0000            | 0.3174 $\pm$ 0.0323 | 125.8270 | 139.4768 | 0.3174 $\pm$ 0.0323  | 125.8270   | 139.5167 | 0.3174 $\pm$ 0.0323    | 125.8270     | 139.5076 | 0.3187 $\pm$ 0.0323 | 0.2876    | 0.2876        | 0.2876          |
+| 4    | 1095            | 780     | 0.3510   | 0.0013  | 0.0000      | 0.0001           | 0.0001            | 0.3393 $\pm$ 0.0632 | 151.2765 | 139.4768 | 0.3392 $\pm$ 0.0632  | 151.3211   | 139.5167 | 0.3392 $\pm$ 0.0632    | 151.3211     | 139.5076 | 0.3406 $\pm$ 0.0632 | 0.3693    | 0.3693        | 0.3693          |
+| 4    | 1278            | 780     | 0.4096   | 0.0013  | 0.0000      | 0.0002           | 0.0001            | 0.3854 $\pm$ 0.0748 | 155.4392 | 139.4768 | 0.3852 $\pm$ 0.0748  | 155.5199   | 139.5167 | 0.3853 $\pm$ 0.0748    | 155.4795     | 139.5076 | 0.3867 $\pm$ 0.0748 | 0.4308    | 0.4309        | 0.4308          |
+| 4    | 1338            | 780     | 0.4288   | 0.0013  | 0.0000      | 0.0002           | 0.0001            | 0.4373 $\pm$ 0.1653 | 143.4227 | 139.4768 | 0.4371 $\pm$ 0.1653  | 143.4883   | 139.5167 | 0.4372 $\pm$ 0.1653    | 143.4555     | 139.5076 | 0.4386 $\pm$ 0.1653 | 0.4510    | 0.4510        | 0.4510          |
+| 4    | 1446            | 780     | 0.4635   | 0.0013  | 0.0000      | 0.0002           | 0.0002            | 0.4136 $\pm$ 0.1778 | 163.8812 | 139.4768 | 0.4134 $\pm$ 0.1778  | 163.9604   | 139.5167 | 0.4134 $\pm$ 0.1778    | 163.9604     | 139.5076 | 0.4149 $\pm$ 0.1778 | 0.4873    | 0.4873        | 0.4874          |
+| 4    | 1478            | 780     | 0.4737   | 0.0013  | 0.0000      | 0.0002           | 0.0002            | 0.5309 $\pm$ 0.2986 | 130.4977 | 139.4768 | 0.5307 $\pm$ 0.2986  | 130.5469   | 139.5167 | 0.5307 $\pm$ 0.2986    | 130.5469     | 139.5076 | 0.5322 $\pm$ 0.2986 | 0.4980    | 0.4981        | 0.4981          |
+
+Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU core(s) in cluster 1. It validates the performance mode of throughput and latency in the execute phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $c$
+    <ul>
+      <li> Explanation: The number of CPU cores in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^e$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^e$
+    <ul>
+      <li> Explanation: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^e$
+    <ul>
+      <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second,  $\lambda^e=209$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=209/(1*780)=0.2679$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^e$
+    <ul>
+      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e$.</li>
+      <li> Example 1: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e=1/780=0.0013$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^e$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{comm}^e$
+    <ul>
+      <li> Explanation: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
+      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=209$ transactions per second, we have the queueing latency $T_q^e=0.0002$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2852$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2852-0.0013-0.0002=0.2837$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=29.3380$ Mbps, from which the model has an overall latency $T^e=0.3354$ seconds.</li>
+      <li> Example 2: The number of CPU cores $c=2$ and the transaction arrival rate $\lambda^e=426$ transactions per second, we have the queueing latency $T_q^e=0.0006$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2407$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2388$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=79.5231$ Mbps, from which the model has an overall latency $T^e=0.2530$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+#### 4.2. Execute Phase in Cluster 2
+
+Table 2. The throughput and latency of an endorsing peer with $c=1,2,4$ CPU cores in cluster 2.
+
+|      | Measure derived |         |          |         |             |                 |                   | Measure             |          |          |                      |            |          |                        |              |          |                     | Our model |               |                 |
+| ---- | --------------- | ------- | -------- | ------- | ----------- | --------------- | ----------------- | ------------------- | -------- | -------- | -------------------- | ---------- | -------- | ---------------------- | ------------ | -------- | ------------------- | --------- | ------------- | --------------- |
+| $c$  | $\lambda^e$     | $\mu^e$ | $\rho^e$ | $T_s^e$ | Our $T_q^e$ | $M/M/1$ $T_q^e$ | $M/H_2/1$ $T_q^e$ | Our $T_{comm}^e$    | Our BW   | avg BW   | $M/M/1$ $T_{comm}^e$ | $M/M/1$ BW | avg BW   | $M/H_2/1$ $T_{comm}^e$ | $M/H_2/1$ BW | avg BW   | $T^e$               | Our $T^e$ | $M/M/1$ $T^e$ | $M/H_2/1$ $T^e$ |
+| 1    | 214             | 470     | 0.4553   | 0.0021  | 0.0009      | 0.0018          | 0.0013            | 0.2125 $\pm$ 0.0128 | 47.2059  | 42.5357  | 0.2116 $\pm$ 0.0128  | 47.4067    | 43.4146  | 0.2121 $\pm$ 0.0128    | 47.2949      | 42.9619  | 0.2155 $\pm$ 0.0128 | 0.2388    | 0.2350        | 0.2369          |
+| 1    | 244             | 470     | 0.5191   | 0.0021  | 0.0011      | 0.0023          | 0.0017            | 0.2446 $\pm$ 0.0359 | 46.7600  | 42.5357  | 0.2434 $\pm$ 0.0359  | 46.9906    | 43.4146  | 0.2440 $\pm$ 0.0359    | 46.8750      | 42.9619  | 0.2478 $\pm$ 0.0359 | 0.2721    | 0.2678        | 0.2700          |
+| 1    | 312             | 470     | 0.6638   | 0.0021  | 0.0021      | 0.0042          | 0.0032            | 0.3178 $\pm$ 0.0241 | 46.0195  | 42.5357  | 0.3157 $\pm$ 0.0241  | 46.3256    | 43.4146  | 0.3167 $\pm$ 0.0241    | 46.1793      | 42.9619  | 0.3220 $\pm$ 0.0241 | 0.3480    | 0.3432        | 0.3457          |
+| 1    | 352             | 470     | 0.7489   | 0.0021  | 0.0032      | 0.0063          | 0.0048            | 0.4165 $\pm$ 0.0764 | 39.6158  | 42.5357  | 0.4134 $\pm$ 0.0764  | 39.9129    | 43.4146  | 0.4149 $\pm$ 0.0764    | 39.7686      | 42.9619  | 0.4218 $\pm$ 0.0764 | 0.3932    | 0.3885        | 0.3910          |
+| 1    | 423             | 470     | 0.9000   | 0.0021  | 0.0096      | 0.0191          | 0.0144            | 0.5234 $\pm$ 0.0772 | 37.8833  | 42.5357  | 0.5139 $\pm$ 0.0772  | 38.5836    | 43.4146  | 0.5186 $\pm$ 0.0772    | 38.2339      | 42.9619  | 0.5351 $\pm$ 0.0772 | 0.4779    | 0.4779        | 0.4780          |
+| 1    | 460             | 470     | 0.9787   | 0.0021  | 0.0489      | 0.0979          | 0.0734            | 0.5715 $\pm$ 0.0610 | 37.7297  | 42.5357  | 0.5225 $\pm$ 0.0610  | 41.2679    | 43.4146  | 0.547 $\pm$ 0.0610     | 39.4196      | 42.9619  | 0.6225 $\pm$ 0.0610 | 0.5579    | 0.5967        | 0.5774          |
+| 2    | 244             | 470     | 0.2596   | 0.0021  | 0.0000      | 0.0003          | 0.0002            | 0.0879 $\pm$ 0.0036 | 130.1195 | 133.7755 | 0.0876 $\pm$ 0.0036  | 130.5651   | 134.3903 | 0.0877 $\pm$ 0.0036    | 130.4162     | 134.1423 | 0.0900 $\pm$ 0.0036 | 0.0876    | 0.0875        | 0.0876          |
+| 2    | 312             | 470     | 0.3319   | 0.0021  | 0.0001      | 0.0005          | 0.0003            | 0.1052 $\pm$ 0.0103 | 139.0209 | 133.7755 | 0.1048 $\pm$ 0.0103  | 139.5515   | 134.3903 | 0.105 $\pm$ 0.0103     | 139.2857     | 134.1423 | 0.1074 $\pm$ 0.0103 | 0.1115    | 0.1114        | 0.1114          |
+| 2    | 352             | 470     | 0.3745   | 0.0021  | 0.0001      | 0.0006          | 0.0004            | 0.1278 $\pm$ 0.0125 | 129.1080 | 133.7755 | 0.1273 $\pm$ 0.0125  | 129.6151   | 134.3903 | 0.1275 $\pm$ 0.0125    | 129.4118     | 134.1423 | 0.1300 $\pm$ 0.0125 | 0.1255    | 0.1255        | 0.1255          |
+| 2    | 423             | 470     | 0.4500   | 0.0021  | 0.0002      | 0.0008          | 0.0006            | 0.1663 $\pm$ 0.0085 | 119.2311 | 133.7755 | 0.1657 $\pm$ 0.0085  | 119.6628   | 134.3903 | 0.1659 $\pm$ 0.0085    | 119.5185     | 134.1423 | 0.1686 $\pm$ 0.0085 | 0.1505    | 0.1504        | 0.1505          |
+| 2    | 460             | 470     | 0.4894   | 0.0021  | 0.0003      | 0.0010          | 0.0007            | 0.1709 $\pm$ 0.0180 | 126.1703 | 133.7755 | 0.1702 $\pm$ 0.0180  | 126.6892   | 134.3903 | 0.1705 $\pm$ 0.0180    | 126.4663     | 134.1423 | 0.1733 $\pm$ 0.0180 | 0.1636    | 0.1635        | 0.1635          |
+| 2    | 566             | 470     | 0.6021   | 0.0021  | 0.0006      | 0.0016          | 0.0012            | 0.1908 $\pm$ 0.0160 | 139.0527 | 133.7755 | 0.1898 $\pm$ 0.0160  | 139.7853   | 134.3903 | 0.1902 $\pm$ 0.0160    | 139.4913     | 134.1423 | 0.1935 $\pm$ 0.0160 | 0.2010    | 0.2011        | 0.2011          |
+| 2    | 670             | 470     | 0.7128   | 0.0021  | 0.0011      | 0.0026          | 0.0020            | 0.2043 $\pm$ 0.0136 | 153.7261 | 133.7755 | 0.2028 $\pm$ 0.0136  | 154.8632   | 134.3903 | 0.2034 $\pm$ 0.0136    | 154.4063     | 134.1423 | 0.2075 $\pm$ 0.0136 | 0.2380    | 0.2384        | 0.2382          |
+| 4    | 244             | 470     | 0.1298   | 0.0021  | 0.0000      | 0.0000          | 0.0000            | 0.0685 $\pm$ 0.0019 | 166.9708 | 226.2017 | 0.0685 $\pm$ 0.0019  | 166.9708   | 226.4957 | 0.0685 $\pm$ 0.0019    | 166.9708     | 226.3851 | 0.0706 $\pm$ 0.0019 | 0.0527    | 0.0526        | 0.0526          |
+| 4    | 312             | 470     | 0.1660   | 0.0021  | 0.0000      | 0.0001          | 0.0000            | 0.0753 $\pm$ 0.0045 | 194.2231 | 226.2017 | 0.0752 $\pm$ 0.0045  | 194.4814   | 226.4957 | 0.0753 $\pm$ 0.0045    | 194.2231     | 226.3851 | 0.0774 $\pm$ 0.0045 | 0.0668    | 0.0668        | 0.0667          |
+| 4    | 352             | 470     | 0.1872   | 0.0021  | 0.0000      | 0.0001          | 0.0000            | 0.0767 $\pm$ 0.0040 | 215.1239 | 226.2017 | 0.0766 $\pm$ 0.0040  | 215.4047   | 226.4957 | 0.0767 $\pm$ 0.0040    | 215.1239     | 226.3851 | 0.0788 $\pm$ 0.0040 | 0.0750    | 0.0750        | 0.0750          |
+| 4    | 423             | 470     | 0.2250   | 0.0021  | 0.0000      | 0.0001          | 0.0001            | 0.0796 $\pm$ 0.0038 | 249.0970 | 226.2017 | 0.0795 $\pm$ 0.0038  | 249.4104   | 226.4957 | 0.0795 $\pm$ 0.0038    | 249.4104     | 226.3851 | 0.0817 $\pm$ 0.0038 | 0.0898    | 0.0897        | 0.0898          |
+| 4    | 460             | 470     | 0.2447   | 0.0021  | 0.0000      | 0.0001          | 0.0001            | 0.0922 $\pm$ 0.0060 | 233.8666 | 226.2017 | 0.0921 $\pm$ 0.0060  | 234.1205   | 226.4957 | 0.0921 $\pm$ 0.0060    | 234.1205     | 226.3851 | 0.0943 $\pm$ 0.0060 | 0.0974    | 0.0974        | 0.0974          |
+| 4    | 566             | 470     | 0.3011   | 0.0021  | 0.0000      | 0.0002          | 0.0001            | 0.1065 $\pm$ 0.0030 | 249.1197 | 226.2017 | 0.1063 $\pm$ 0.0030  | 249.5884   | 226.4957 | 0.1064 $\pm$ 0.0030    | 249.3539     | 226.3851 | 0.1086 $\pm$ 0.0030 | 0.1194    | 0.1194        | 0.1194          |
+| 4    | 670             | 470     | 0.3564   | 0.0021  | 0.0000      | 0.0002          | 0.0002            | 0.1142 $\pm$ 0.0090 | 275.0109 | 226.2017 | 0.114 $\pm$ 0.0090   | 275.4934   | 226.4957 | 0.114 $\pm$ 0.0090     | 275.4934     | 226.3851 | 0.1163 $\pm$ 0.0090 | 0.1409    | 0.1410        | 0.1410          |
+
+Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU core(s) in cluster 2. It validates the performance mode of throughput and latency in the execute phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $c$
+    <ul>
+      <li> Explanation: The number of CPU cores in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^e$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^e$
+    <ul>
+      <li> Explanation: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=470$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^e$
+    <ul>
+      <li> Explanation: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
+      <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=470$ transactions per second,  $\lambda^e=214$ transactions per second, and hence $\rho^e=\lambda^e/(c\mu^e)=214/(1*470)=0.4553$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^e$
+    <ul>
+      <li> Explanation: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e$.</li>
+      <li> Example 1: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/ \mu^e=1/470=0.0021$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^e$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the execute phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{comm}^e$
+    <ul>
+      <li> Explanation: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
+      <li> Example 1: The number of CPU cores $c=1$ and the transaction arrival rate $\lambda^e=214$ transactions per second. We then have the queueing latency $T_q^e=0.0009$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.2155$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.2125$ seconds. And when $c=1$, the average effective network bandwidth is stable around $\beta^e=42.5357$ Mbps, from which the model has an overall latency $T^e=0.2388$ seconds.</li>
+      <li> Example 2: The number of CPU cores be $c=2$ and the transaction arrival rate be $\lambda^e=244$ transactions per second; we have the queueing latency $T_q^e=0.0000$ seconds. We measure the overall latency of a transaction spent in the execute phase $T^e=0.0900$ seconds, from which the communication latency of a transaction spent in the execute phase $T_{comm}^e=0.0879$ seconds. And when $c=2$, the average effective network bandwidth is stable around $\beta^e=133.7755$ Mbps, from which the model has an overall latency $T^e=0.0876$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+
+#### 4.3. Order Phase with a BatchSize of 20 in Cluster 1
+
+Table 3. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 1 of 1 Gbit/s Ethernet network. The BatchSize is 20 and the BatchTimeout is 1.
+
+|      | Measure derived |         |          |         |              | Measure             |          |         |                     |          |          |                     |            |          |                     |                 |                     | Our model |               |
+| ---- | --------------- | ------- | -------- | ------- | ------------ | ------------------- | -------- | ------- | ------------------- | -------- | -------- | ------------------- | ---------- | -------- | ------------------- | --------------- | ------------------- | --------- | ------------- |
+| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{w}^r$ | $T_{c2l}^r$         | BW       | avg BW  | Our $T_{l2f}^r$     | Our BW   | avg BW   | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW   | Our $T_q^r$         | $M/M/1$ $T_q^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
+| 3    | 70              | 190     | 0.3684   | 0.0053  | 0.1429       | 0.0403 $\pm$ 0.0061 | 40.7103  | 55.1617 | 0.1928 $\pm$ 0.1082 | 17.0189  | 17.4942  | 0.1901 $\pm$ 0.1082 | 17.2607    | 17.7970  | 0.0004 $\pm$ 0.0008 | 0.0031          | 0.3817 $\pm$ 0.1051 | 0.3659    | 0.2225        |
+| 3    | 109             | 190     | 0.5737   | 0.0053  | 0.0917       | 0.0521 $\pm$ 0.0080 | 49.0343  | 55.1617 | 0.2818 $\pm$ 0.0705 | 18.1312  | 17.4942  | 0.277 $\pm$ 0.0705  | 18.4454    | 17.7970  | 0.0023 $\pm$ 0.0010 | 0.0071          | 0.4332 $\pm$ 0.0792 | 0.4377    | 0.3458        |
+| 3    | 180             | 190     | 0.9474   | 0.0053  | 0.0556       | 0.0557 $\pm$ 0.0160 | 75.7406  | 55.1617 | 0.4868 $\pm$ 0.1246 | 17.3326  | 17.4942  | 0.4771 $\pm$ 0.1246 | 17.6850    | 17.7970  | 0.0850 $\pm$ 0.0013 | 0.0947          | 0.6884 $\pm$ 0.1411 | 0.7047    | 0.6506        |
+| 9    | 70              | 190     | 0.3684   | 0.0053  | 0.1429       | 0.0422 $\pm$ 0.0061 | 38.8774  | 64.9560 | 0.2395 $\pm$ 0.0628 | 54.8017  | 50.8648  | 0.2368 $\pm$ 0.0628 | 55.4265    | 51.4904  | 0.0004 $\pm$ 0.0000 | 0.0031          | 0.4303 $\pm$ 0.0636 | 0.4319    | 0.2886        |
+| 9    | 109             | 190     | 0.5737   | 0.0053  | 0.0917       | 0.0466 $\pm$ 0.0047 | 54.8216  | 64.9560 | 0.382 $\pm$ 0.1053  | 53.5013  | 50.8648  | 0.3772 $\pm$ 0.1053 | 54.1821    | 51.4904  | 0.0023 $\pm$ 0.0004 | 0.0071          | 0.5279 $\pm$ 0.1083 | 0.5404    | 0.4486        |
+| 9    | 180             | 190     | 0.9474   | 0.0053  | 0.0556       | 0.0417 $\pm$ 0.0050 | 101.1691 | 64.9560 | 0.762 $\pm$ 0.1476  | 44.2913  | 50.8648  | 0.7523 $\pm$ 0.1476 | 44.8624    | 51.4904  | 0.0850 $\pm$ 0.0131 | 0.0947          | 0.9496 $\pm$ 0.1345 | 0.8744    | 0.8204        |
+| 15   | 70              | 190     | 0.3684   | 0.0053  | 0.1429       | 0.0522 $\pm$ 0.0163 | 31.4296  | 52.4210 | 0.2191 $\pm$ 0.0582 | 104.8323 | 106.4712 | 0.2164 $\pm$ 0.0582 | 106.1402   | 108.0775 | 0.0004 $\pm$ 0.0006 | 0.0031          | 0.4199 $\pm$ 0.0466 | 0.3956    | 0.2522        |
+| 15   | 109             | 190     | 0.5737   | 0.0053  | 0.0917       | 0.0549 $\pm$ 0.0136 | 46.5335  | 52.4210 | 0.2722 $\pm$ 0.0478 | 131.3947 | 106.4712 | 0.2674 $\pm$ 0.0478 | 133.7533   | 108.0775 | 0.0023 $\pm$ 0.0011 | 0.0071          | 0.4264 $\pm$ 0.0589 | 0.4840    | 0.3921        |
+| 15   | 180             | 190     | 0.9474   | 0.0053  | 0.0556       | 0.0532 $\pm$ 0.0136 | 79.2998  | 52.4210 | 0.71 $\pm$ 0.1740   | 83.1866  | 106.4712 | 0.7003 $\pm$ 0.1740 | 84.3389    | 108.0775 | 0.0850 $\pm$ 0.0155 | 0.0947          | 0.9091 $\pm$ 0.1467 | 0.7811    | 0.7270        |
+
+Table 3 shows the effects of OSNs on throughput and latency during the order phase. There are $k=3, 9, 15$ OSNs in cluster 1 of a 1 Gbit/s Ethernet network. The BatchSize is 20 and the BatchTimeout is 1. It validates the model of throughput and latency in the order phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $k$
+    <ul>
+      <li> Explanation: The number of ordering service nodes in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^r$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^r$
+    <ul>
+      <li> Explanation: The maximum throughput of the ordering service in the order phase.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes, i.e., $k=3$, is $\mu^r=190$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^r$
+    <ul>
+      <li> Explanation: The utilization of the ordering service in the order phase, where we can derive $\rho^r=\lambda^r/ \mu^r$.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes is $\mu^r=190$ transactions per second, $\lambda^r=70$ transactions per second, and hence $\rho^r=\lambda^r/ \mu^r=70/190=0.3684$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^r$
+    <ul>
+      <li> Explanation: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r$.</li>
+      <li> Example 1: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r=1/190=0.0053$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^r$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_w^r$
+    <ul>
+      <li> Explanation: The waiting time of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{c2l}^r$, $T_{l2f}^r$
+    <ul>
+      <li> Explanation: The communication latency spent between the client and the ordering service.</li>
+      <li> Example 1: The number of ordering service nodes be $k=3$ and the transaction arrival rate be $\lambda^r=70$ transactions per second, we have a queueing latency of $T_q^r=0.0004$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.3817$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0403$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.1928$. And when $k=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=55.1617$ Mbps, $\beta_{l2f}^r=17.4942$ Mbps, from which the model has an overall latency $T^r=0.3659$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+#### 4.4. Order Phase with a BatchSize of 50 in Cluster 1
+
+Table 4. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 1 of 1 Gbit/s Ethernet network. The BatchSize is 50 and the BatchTimeout is 1.
+
+|      | Measure derived |         |          |         |           | Measure             |          |          |                     |          |          |                     |            |          |                     |                   |                     | Our model |               |
+| ---- | --------------- | ------- | -------- | ------- | --------- | ------------------- | -------- | -------- | ------------------- | -------- | -------- | ------------------- | ---------- | -------- | ------------------- | ----------------- | ------------------- | --------- | ------------- |
+| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{w}^r$ | $T_{c2l}^r$         | BW       | avg BW   | Our $T_{l2f}^r$     | Our BW   | avg BW   | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW   | Our $T_{q}^r$       | $M/M/1$ $T_{q}^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
+| 3    | 109             | 370     | 0.2946   | 0.0027  | 0.2294    | 0.0516 $\pm$ 0.0150 | 49.5094  | 117.2577 | 0.0987 $\pm$ 0.0444 | 51.7667  | 52.9649  | 0.0976 $\pm$ 0.0444 | 52.3502    | 53.7112  | 0.0000 $\pm$ 0.0000 | 0.0011            | 0.3824 $\pm$ 0.0481 | 0.3504    | 0.1207        |
+| 3    | 180             | 370     | 0.4865   | 0.0027  | 0.1389    | 0.0552 $\pm$ 0.0059 | 76.4266  | 117.2577 | 0.1648 $\pm$ 0.0330 | 51.1984  | 52.9649  | 0.1628 $\pm$ 0.0330 | 51.8274    | 53.7112  | 0.0006 $\pm$ 0.0001 | 0.0026            | 0.3622 $\pm$ 0.0346 | 0.3375    | 0.1984        |
+| 3    | 263             | 370     | 0.7108   | 0.0027  | 0.0951    | 0.0539 $\pm$ 0.0104 | 114.3611 | 117.2577 | 0.1929 $\pm$ 0.0464 | 63.9094  | 52.9649  | 0.1897 $\pm$ 0.0464 | 64.9875    | 53.7112  | 0.0034 $\pm$ 0.0004 | 0.0066            | 0.3480 $\pm$ 0.0473 | 0.3865    | 0.2914        |
+| 3    | 310             | 370     | 0.8378   | 0.0027  | 0.0806    | 0.0424 $\pm$ 0.0045 | 171.3591 | 117.2577 | 0.316 $\pm$ 0.1288  | 45.9850  | 52.9649  | 0.3118 $\pm$ 0.1288 | 46.6044    | 53.7112  | 0.0098 $\pm$ 0.0005 | 0.0140            | 0.4515 $\pm$ 0.1325 | 0.4294    | 0.3492        |
+| 3    | 342             | 370     | 0.9243   | 0.0027  | 0.0731    | 0.0459 $\pm$ 0.0059 | 174.6324 | 117.2577 | 0.3085 $\pm$ 0.1071 | 51.9652  | 52.9649  | 0.3037 $\pm$ 0.1071 | 52.7865    | 53.7112  | 0.0282 $\pm$ 0.0012 | 0.0330            | 0.4584 $\pm$ 0.1088 | 0.4750    | 0.4025        |
+| 9    | 109             | 370     | 0.2946   | 0.0027  | 0.2294    | 0.0552 $\pm$ 0.0148 | 46.2806  | 112.7968 | 0.1385 $\pm$ 0.0743 | 147.5632 | 181.2399 | 0.1374 $\pm$ 0.0743 | 148.7445   | 183.4481 | 0.0000 $\pm$ 0.0001 | 0.0011            | 0.4258 $\pm$ 0.0666 | 0.3675    | 0.1379        |
+| 9    | 180             | 370     | 0.4865   | 0.0027  | 0.1389    | 0.0584 $\pm$ 0.0161 | 72.2389  | 112.7968 | 0.1719 $\pm$ 0.0298 | 196.3351 | 181.2399 | 0.1699 $\pm$ 0.0298 | 198.6463   | 183.4481 | 0.0006 $\pm$ 0.0000 | 0.0026            | 0.3725 $\pm$ 0.0433 | 0.3658    | 0.2267        |
+| 9    | 263             | 370     | 0.7108   | 0.0027  | 0.0951    | 0.0569 $\pm$ 0.0139 | 108.3315 | 112.7968 | 0.2588 $\pm$ 0.0489 | 190.5429 | 181.2399 | 0.2556 $\pm$ 0.0489 | 192.9284   | 183.4481 | 0.0034 $\pm$ 0.0001 | 0.0066            | 0.4169 $\pm$ 0.0367 | 0.4279    | 0.3328        |
+| 9    | 310             | 370     | 0.8378   | 0.0027  | 0.0806    | 0.0443 $\pm$ 0.0051 | 164.0096 | 112.7968 | 0.3219 $\pm$ 0.0684 | 180.5685 | 181.2399 | 0.3177 $\pm$ 0.0684 | 182.9556   | 183.4481 | 0.0098 $\pm$ 0.0001 | 0.0140            | 0.4593 $\pm$ 0.0660 | 0.4782    | 0.3980        |
+| 9    | 342             | 370     | 0.9243   | 0.0027  | 0.0731    | 0.0463 $\pm$ 0.0053 | 173.1237 | 112.7968 | 0.3354 $\pm$ 0.1094 | 191.1896 | 181.2399 | 0.3306 $\pm$ 0.1094 | 193.9655   | 183.4481 | 0.0282 $\pm$ 0.0003 | 0.0330            | 0.4857 $\pm$ 0.1046 | 0.5289    | 0.4563        |
+| 15   | 109             | 370     | 0.2946   | 0.0027  | 0.2294    | 0.0397 $\pm$ 0.0055 | 64.3498  | 144.4729 | 0.1512 $\pm$ 0.0274 | 236.5451 | 308.0953 | 0.1501 $\pm$ 0.0274 | 238.2786   | 311.8089 | 0.0000 $\pm$ 0.0001 | 0.0011            | 0.4230 $\pm$ 0.0281 | 0.3659    | 0.1362        |
+| 15   | 180             | 370     | 0.4865   | 0.0027  | 0.1389    | 0.0439 $\pm$ 0.0093 | 96.0991  | 144.4729 | 0.1955 $\pm$ 0.0141 | 302.1100 | 308.0953 | 0.1935 $\pm$ 0.0141 | 305.2326   | 311.8089 | 0.0006 $\pm$ 0.0000 | 0.0026            | 0.3816 $\pm$ 0.0154 | 0.3631    | 0.2239        |
+| 15   | 263             | 370     | 0.7108   | 0.0027  | 0.0951    | 0.0363 $\pm$ 0.0049 | 169.8089 | 144.4729 | 0.2394 $\pm$ 0.0263 | 360.4715 | 308.0953 | 0.2362 $\pm$ 0.0263 | 365.3551   | 311.8089 | 0.0034 $\pm$ 0.0001 | 0.0066            | 0.3769 $\pm$ 0.0294 | 0.4240    | 0.3287        |
+| 15   | 310             | 370     | 0.8378   | 0.0027  | 0.0806    | 0.0410 $\pm$ 0.0044 | 177.2104 | 144.4729 | 0.3409 $\pm$ 0.0448 | 298.3830 | 308.0953 | 0.3367 $\pm$ 0.0448 | 302.1050   | 311.8089 | 0.0098 $\pm$ 0.0000 | 0.0140            | 0.4750 $\pm$ 0.0480 | 0.4735    | 0.3932        |
+| 15   | 342             | 370     | 0.9243   | 0.0027  | 0.0731    | 0.0373 $\pm$ 0.0037 | 214.8961 | 144.4729 | 0.3272 $\pm$ 0.0713 | 342.9668 | 308.0953 | 0.3224 $\pm$ 0.0713 | 348.0730   | 311.8089 | 0.0282 $\pm$ 0.0008 | 0.0330            | 0.4685 $\pm$ 0.0711 | 0.5237    | 0.4511        |
+
+Table 4 shows the effects of OSNs on throughput and latency during the order phase. There are $k=3, 9, 15$ OSNs in cluster 1 of a 1 Gbit/s Ethernet network. The BatchSize is 50 and the BatchTimeout is 1. It validates the model of throughput and latency in the order phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $k$
+    <ul>
+      <li> Explanation: The number of ordering service nodes in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^r$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^r$
+    <ul>
+      <li> Explanation: The maximum throughput of the ordering service in the order phase.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes, i.e., $k=3$, is $\mu^r=370$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^r$
+    <ul>
+      <li> Explanation: The utilization of the ordering service in the order phase, where we can derive $\rho^r=\lambda^r/ \mu^r$.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes is $\mu^r=370$ transactions per second, $\lambda^r=109$ transactions per second, and hence $\rho^r=\lambda^r/ \mu^r=109/370=0.2946$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^r$
+    <ul>
+      <li> Explanation: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r$.</li>
+      <li> Example 1: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r=1/370=0.0027$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^r$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_w^r$
+    <ul>
+      <li> Explanation: The waiting time of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{c2l}^r$, $T_{l2f}^r$
+    <ul>
+      <li> Explanation: The communication latency spent between the client and the ordering service.</li>
+      <li> Example 1: The number of ordering service nodes is $k=3$ and the transaction arrival rate is $\lambda^r=109$ transactions per second, we have a queueing latency of $T_q^r=0.0000$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.3824$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0516$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.0987$. And when $k=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=117.2577$ Mbps, $\beta_{l2f}^r=52.9649$ Mbps, from which the model has an overall latency $T^r=0.3504$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+#### 4.5. Order Phase with a BatchSize of 2 in Cluster 2
+
+Table 5. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 2 of 10 Gbit/s Ethernet network. The BatchSize is 2 and the BatchTimeout is 1.
+
+|      | Measure derived |         |          |         |           | Measure             |          |          |                     |           |           |                     |            |           |                     |                   |                     | Our model |               |
+| ---- | --------------- | ------- | -------- | ------- | --------- | ------------------- | -------- | -------- | ------------------- | --------- | --------- | ------------------- | ---------- | --------- | ------------------- | ----------------- | ------------------- | --------- | ------------- |
+| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{w}^r$ | $T_{c2l}^r$         | BW       | avg BW   | Our $T_{l2f}^r$     | Our BW    | avg BW    | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW    | Our $T_{q}^r$       | $M/M/1$ $T_{q}^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
+| 3    | 244             | 850     | 0.2871   | 0.0012  | 0.0041    | 0.0251 $\pm$ 0.0029 | 227.8386 | 427.4393 | 0.0171 $\pm$ 0.0019 | 668.8596  | 509.3831  | 0.0167 $\pm$ 0.0019 | 684.8802   | 523.1553  | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0475 $\pm$ 0.0041 | 0.0411    | 0.0368        |
+| 3    | 312             | 850     | 0.3671   | 0.0012  | 0.0032    | 0.0222 $\pm$ 0.0017 | 329.3919 | 427.4393 | 0.0282 $\pm$ 0.0049 | 518.6170  | 509.3831  | 0.0276 $\pm$ 0.0049 | 529.8913   | 523.1553  | 0.0000 $\pm$ 0.0000 | 0.0006            | 0.0548 $\pm$ 0.0055 | 0.0502    | 0.0469        |
+| 3    | 352             | 850     | 0.4141   | 0.0012  | 0.0028    | 0.0218 $\pm$ 0.0018 | 378.4404 | 427.4393 | 0.0287 $\pm$ 0.0026 | 574.9129  | 509.3831  | 0.0287 $\pm$ 0.0026 | 589.2857   | 523.1553  | 0.0001 $\pm$ 0.0000 | 0.0008            | 0.0546 $\pm$ 0.0034 | 0.0558    | 0.0528        |
+| 3    | 423             | 850     | 0.4976   | 0.0012  | 0.0024    | 0.0415 $\pm$ 0.0019 | 238.8931 | 427.4393 | 0.0254 $\pm$ 0.0149 | 780.6348  | 509.3831  | 0.0244 $\pm$ 0.0149 | 812.6281   | 523.1553  | 0.0002 $\pm$ 0.0000 | 0.0012            | 0.0707 $\pm$ 0.0145 | 0.0659    | 0.0635        |
+| 3    | 566             | 850     | 0.6659   | 0.0012  | 0.0018    | 0.0223 $\pm$ 0.0028 | 594.8711 | 427.4393 | 0.0649 $\pm$ 0.0225 | 408.8020  | 509.3831  | 0.0636 $\pm$ 0.0225 | 417.1580   | 523.1553  | 0.0010 $\pm$ 0.0000 | 0.0023            | 0.0912 $\pm$ 0.0208 | 0.0871    | 0.0852        |
+| 3    | 760             | 850     | 0.8941   | 0.0012  | 0.0013    | 0.0224 $\pm$ 0.0018 | 795.2009 | 427.4393 | 0.341 $\pm$ 0.1373  | 104.4721  | 509.3831  | 0.339 $\pm$ 0.1373  | 105.0885   | 523.1553  | 0.0079 $\pm$ 0.0015 | 0.0099            | 0.3738 $\pm$ 0.1352 | 0.1220    | 0.1209        |
+| 9    | 244             | 850     | 0.2871   | 0.0012  | 0.0041    | 0.0236 $\pm$ 0.0021 | 242.3199 | 462.1425 | 0.0216 $\pm$ 0.0034 | 2118.0556 | 2164.0940 | 0.0212 $\pm$ 0.0034 | 2158.0189  | 2219.3968 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0505 $\pm$ 0.0033 | 0.0388    | 0.0346        |
+| 9    | 312             | 850     | 0.3671   | 0.0012  | 0.0032    | 0.0214 $\pm$ 0.0023 | 341.7056 | 462.1425 | 0.0292 $\pm$ 0.0077 | 2003.4247 | 2164.0940 | 0.0286 $\pm$ 0.0077 | 2045.4545  | 2219.3968 | 0.0000 $\pm$ 0.0000 | 0.0006            | 0.0550 $\pm$ 0.0061 | 0.0473    | 0.0440        |
+| 9    | 352             | 850     | 0.4141   | 0.0012  | 0.0028    | 0.0255 $\pm$ 0.0023 | 323.5294 | 462.1425 | 0.0273 $\pm$ 0.0047 | 2417.5824 | 2164.0940 | 0.0266 $\pm$ 0.0047 | 2481.2030  | 2219.3968 | 0.0001 $\pm$ 0.0000 | 0.0008            | 0.0569 $\pm$ 0.0054 | 0.0524    | 0.0496        |
+| 9    | 423             | 850     | 0.4976   | 0.0012  | 0.0024    | 0.0225 $\pm$ 0.0028 | 440.6250 | 462.1425 | 0.0384 $\pm$ 0.0075 | 2065.4297 | 2164.0940 | 0.0374 $\pm$ 0.0075 | 2120.6551  | 2219.3968 | 0.0002 $\pm$ 0.0000 | 0.0012            | 0.0647 $\pm$ 0.0073 | 0.0619    | 0.0596        |
+| 9    | 566             | 850     | 0.6659   | 0.0012  | 0.0018    | 0.0217 $\pm$ 0.0009 | 611.3191 | 462.1425 | 0.0508 $\pm$ 0.0073 | 2089.0748 | 2164.0940 | 0.0495 $\pm$ 0.0073 | 2143.9394  | 2219.3968 | 0.0010 $\pm$ 0.0001 | 0.0023            | 0.0765 $\pm$ 0.0069 | 0.0817    | 0.0800        |
+| 9    | 760             | 850     | 0.7318   | 0.0012  | 0.0013    | 0.0219 $\pm$ 0.0010 | 813.3562 | 462.1425 | 0.0622 $\pm$ 0.0232 | 2290.9968 | 2164.0940 | 0.0602 $\pm$ 0.0232 | 2367.1096  | 2219.3968 | 0.0079 $\pm$ 0.0014 | 0.0099            | 0.0945 $\pm$ 0.0279 | 0.1148    | 0.1138        |
+| 15   | 244             | 850     | 0.2871   | 0.0012  | 0.0041    | 0.0241 $\pm$ 0.0031 | 237.2925 | 419.8369 | 0.0232 $\pm$ 0.0046 | 3450.9698 | 3644.5789 | 0.0228 $\pm$ 0.0046 | 3511.5132  | 3736.8610 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0526 $\pm$ 0.0032 | 0.0409    | 0.0366        |
+| 15   | 312             | 850     | 0.3671   | 0.0012  | 0.0032    | 0.0283 $\pm$ 0.0049 | 258.3922 | 419.8369 | 0.0261 $\pm$ 0.0028 | 3922.4138 | 3644.5789 | 0.0255 $\pm$ 0.0028 | 4014.7059  | 3736.8610 | 0.0000 $\pm$ 0.0000 | 0.0006            | 0.0588 $\pm$ 0.0036 | 0.0499    | 0.0466        |
+| 15   | 352             | 850     | 0.4141   | 0.0012  | 0.0028    | 0.0240 $\pm$ 0.0036 | 343.7500 | 419.8369 | 0.0313 $\pm$ 0.0098 | 3690.0958 | 3644.5789 | 0.0306 $\pm$ 0.0098 | 3774.5098  | 3736.8610 | 0.0001 $\pm$ 0.0000 | 0.0008            | 0.0594 $\pm$ 0.0066 | 0.0554    | 0.0526        |
+| 15   | 423             | 850     | 0.4976   | 0.0012  | 0.0024    | 0.0237 $\pm$ 0.0028 | 418.3149 | 419.8369 | 0.0305 $\pm$ 0.0076 | 4550.7172 | 3644.5789 | 0.0295 $\pm$ 0.0076 | 4704.9788  | 3736.8610 | 0.0002 $\pm$ 0.0000 | 0.0012            | 0.0580 $\pm$ 0.0071 | 0.0655    | 0.0632        |
+| 15   | 566             | 850     | 0.6659   | 0.0012  | 0.0018    | 0.0243 $\pm$ 0.0030 | 545.9105 | 419.8369 | 0.044 $\pm$ 0.0135  | 4220.8807 | 3644.5789 | 0.0427 $\pm$ 0.0135 | 4349.3852  | 3736.8610 | 0.0010 $\pm$ 0.0000 | 0.0023            | 0.0723 $\pm$ 0.0120 | 0.0866    | 0.0848        |
+| 15   | 760             | 850     | 0.8941   | 0.0012  | 0.0013    | 0.0249 $\pm$ 0.0029 | 715.3614 | 419.8369 | 0.1227 $\pm$ 0.0939 | 2032.3961 | 3644.5789 | 0.1207 $\pm$ 0.0939 | 2066.0729  | 3736.8610 | 0.0079 $\pm$ 0.0035 | 0.0099            | 0.1580 $\pm$ 0.0945 | 0.1213    | 0.1203        |
+
+Table 5 shows the effects of OSNs on throughput and latency during the order phase. There are $k=3, 9, 15$ OSNs in cluster 2 of a 10 Gbit/s Ethernet network. The BatchSize is 2 and the BatchTimeout is 1. It validates the model of throughput and latency in the order phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $k$
+    <ul>
+      <li> Explanation: The number of ordering service nodes in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^r$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^r$
+    <ul>
+      <li> Explanation: The maximum throughput of the ordering service in the order phase.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes, i.e., $k=3$, is $\mu^r=850$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^r$
+    <ul>
+      <li> Explanation: The utilization of the ordering service in the order phase, where we can derive $\rho^r=\lambda^r/ \mu^r$.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes is $\mu^r=850$ transactions per second, $\lambda^r=244$ transactions per second, and hence $\rho^r=\lambda^r/ \mu^r=244/850=0.2871$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^r$
+    <ul>
+      <li> Explanation: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r$.</li>
+      <li> Example 1: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r=1/850=0.0012$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^r$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_w^r$
+    <ul>
+      <li> Explanation: The waiting time of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{c2l}^r$, $T_{l2f}^r$
+    <ul>
+      <li> Explanation: The communication latency spent between the client and the ordering service.</li>
+      <li> Example 1: The number of ordering service nodes be $k=3$ and the transaction arrival rate be $\lambda^r=244$ transactions per second, we have the queueing latency $T_q^r=0.0000$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.0475$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0251$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.0171$. And when $k=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=427.4393$ Mbps, $\beta_{l2f}^r=509.3831$ Mbps, from which the model has an overall latency $T^r=0.0411$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+#### 4.6. Order Phase with a BatchSize of 5 in Cluster 2
+
+Table 6. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 2 of 10 Gbit/s Ethernet network. The BatchSize is 5 and the BatchTimeout is 1.
+
+|      | Measure derived |         |          |         |           | Measure             |          |          |                     |            |           |                     |            |           |                     |                   |                     | Our model |               |
+| ---- | --------------- | ------- | -------- | ------- | --------- | ------------------- | -------- | -------- | ------------------- | ---------- | --------- | ------------------- | ---------- | --------- | ------------------- | ----------------- | ------------------- | --------- | ------------- |
+| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{w}^r$ | $T_{c2l}^r$         | BW       | avg BW   | Our $T_{l2f}^r$     | Our BW     | avg BW    | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW    | Our $T_{q}^r$       | $M/M/1$ $T_{q}^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
+| 3    | 244             | 1500    | 0.1627   | 0.0007  | 0.0102    | 0.0237 $\pm$ 0.0037 | 241.2975 | 486.3114 | 0.0104 $\pm$ 0.0037 | 1099.7596  | 1132.2699 | 0.0103 $\pm$ 0.0037 | 1110.4369  | 1147.8258 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0450 $\pm$ 0.0069 | 0.0328    | 0.0225        |
+| 3    | 312             | 1500    | 0.2080   | 0.0007  | 0.0080    | 0.0228 $\pm$ 0.0014 | 320.7237 | 486.3114 | 0.013 $\pm$ 0.0054  | 1125.0000  | 1132.2699 | 0.0129 $\pm$ 0.0054 | 1133.7209  | 1147.8258 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0445 $\pm$ 0.0045 | 0.0367    | 0.0286        |
+| 3    | 352             | 1500    | 0.2347   | 0.0007  | 0.0071    | 0.0236 $\pm$ 0.0028 | 349.5763 | 486.3114 | 0.0173 $\pm$ 0.0073 | 953.7572   | 1132.2699 | 0.0171 $\pm$ 0.0073 | 964.9123   | 1147.8258 | 0.0000 $\pm$ 0.0000 | 0.0002            | 0.0487 $\pm$ 0.0053 | 0.0393    | 0.0322        |
+| 3    | 423             | 1500    | 0.2820   | 0.0007  | 0.0059    | 0.0205 $\pm$ 0.0007 | 483.6128 | 486.3114 | 0.0218 $\pm$ 0.0079 | 909.5470   | 1132.2699 | 0.0216 $\pm$ 0.0079 | 917.9688   | 1147.8258 | 0.0000 $\pm$ 0.0000 | 0.0002            | 0.0489 $\pm$ 0.0077 | 0.0445    | 0.0386        |
+| 3    | 566             | 1500    | 0.3773   | 0.0007  | 0.0044    | 0.0207 $\pm$ 0.0007 | 640.8514 | 486.3114 | 0.0212 $\pm$ 0.0081 | 1251.4741  | 1132.2699 | 0.0208 $\pm$ 0.0081 | 1275.5409  | 1147.8258 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0470 $\pm$ 0.0082 | 0.0558    | 0.0515        |
+| 3    | 760             | 1500    | 0.5067   | 0.0007  | 0.0033    | 0.0202 $\pm$ 0.0014 | 881.8069 | 486.3114 | 0.0245 $\pm$ 0.0065 | 1454.0816  | 1132.2699 | 0.024 $\pm$ 0.0065  | 1484.3750  | 1147.8258 | 0.0001 $\pm$ 0.0000 | 0.0006            | 0.0488 $\pm$ 0.0076 | 0.0722    | 0.0690        |
+| 9    | 244             | 1500    | 0.1627   | 0.0007  | 0.0102    | 0.0255 $\pm$ 0.0025 | 224.2647 | 448.7822 | 0.0112 $\pm$ 0.0028 | 4084.8214  | 3900.1069 | 0.0111 $\pm$ 0.0028 | 4121.6216  | 3944.8688 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0476 $\pm$ 0.0059 | 0.0354    | 0.0251        |
+| 9    | 312             | 1500    | 0.2080   | 0.0007  | 0.0080    | 0.0262 $\pm$ 0.0038 | 279.1031 | 448.7822 | 0.0170 $\pm$ 0.0041 | 3441.1765  | 3900.1069 | 0.0169 $\pm$ 0.0041 | 3461.5385  | 3944.8688 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0519 $\pm$ 0.0060 | 0.0400    | 0.0319        |
+| 9    | 352             | 1500    | 0.2347   | 0.0007  | 0.0071    | 0.0274 $\pm$ 0.0043 | 301.0949 | 448.7822 | 0.0196 $\pm$ 0.0081 | 3367.3469  | 3900.1069 | 0.0194 $\pm$ 0.0081 | 3402.0619  | 3944.8688 | 0.0000 $\pm$ 0.0000 | 0.0002            | 0.0548 $\pm$ 0.0070 | 0.0431    | 0.0360        |
+| 9    | 423             | 1500    | 0.2820   | 0.0007  | 0.0059    | 0.0239 $\pm$ 0.0022 | 414.8143 | 448.7822 | 0.0203 $\pm$ 0.0083 | 3907.0197  | 3900.1069 | 0.0201 $\pm$ 0.0083 | 3945.8955  | 3944.8688 | 0.0000 $\pm$ 0.0000 | 0.0002            | 0.0508 $\pm$ 0.0074 | 0.0490    | 0.0431        |
+| 9    | 566             | 1500    | 0.3773   | 0.0007  | 0.0044    | 0.0221 $\pm$ 0.0024 | 600.2545 | 448.7822 | 0.0284 $\pm$ 0.0055 | 3736.7958  | 3900.1069 | 0.028 $\pm$ 0.0055  | 3790.1786  | 3944.8688 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0556 $\pm$ 0.0051 | 0.0619    | 0.0576        |
+| 9    | 760             | 1500    | 0.5067   | 0.0007  | 0.0033    | 0.0204 $\pm$ 0.0022 | 873.1618 | 448.7822 | 0.0293 $\pm$ 0.0061 | 4863.4812  | 3900.1069 | 0.0288 $\pm$ 0.0061 | 4947.9167  | 3944.8688 | 0.0001 $\pm$ 0.0000 | 0.0006            | 0.0538 $\pm$ 0.0058 | 0.0803    | 0.0771        |
+| 15   | 244             | 1500    | 0.1627   | 0.0007  | 0.0102    | 0.0250 $\pm$ 0.0040 | 228.7500 | 446.0277 | 0.0104 $\pm$ 0.0009 | 7698.3173  | 8042.6306 | 0.0103 $\pm$ 0.0009 | 7773.0583  | 8167.1831 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0463 $\pm$ 0.0045 | 0.0337    | 0.0234        |
+| 15   | 312             | 1500    | 0.2080   | 0.0007  | 0.0080    | 0.0256 $\pm$ 0.0033 | 285.6445 | 446.0277 | 0.0135 $\pm$ 0.0017 | 7583.3333  | 8042.6306 | 0.0134 $\pm$ 0.0017 | 7639.9254  | 8167.1831 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0478 $\pm$ 0.0033 | 0.0378    | 0.0297        |
+| 15   | 352             | 1500    | 0.2347   | 0.0007  | 0.0071    | 0.0280 $\pm$ 0.0048 | 294.6429 | 446.0277 | 0.0167 $\pm$ 0.0021 | 6916.1677  | 8042.6306 | 0.0165 $\pm$ 0.0021 | 7000.0000  | 8167.1831 | 0.0000 $\pm$ 0.0000 | 0.0002            | 0.0525 $\pm$ 0.0022 | 0.0407    | 0.0335        |
+| 15   | 423             | 1500    | 0.2820   | 0.0007  | 0.0059    | 0.0228 $\pm$ 0.0022 | 434.8273 | 446.0277 | 0.0186 $\pm$ 0.0022 | 7462.1976  | 8042.6306 | 0.0182 $\pm$ 0.0022 | 7626.2019  | 8167.1831 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0480 $\pm$ 0.0064 | 0.0461    | 0.0403        |
+| 15   | 566             | 1500    | 0.3773   | 0.0007  | 0.0044    | 0.0232 $\pm$ 0.0029 | 571.7942 | 446.0277 | 0.0224 $\pm$ 0.0046 | 8291.0156  | 8042.6306 | 0.022 $\pm$ 0.0046  | 8441.7614  | 8167.1831 | 0.0000 $\pm$ 0.0000 | 0.0004            | 0.0507 $\pm$ 0.0077 | 0.0579    | 0.0536        |
+| 15   | 760             | 1500    | 0.5067   | 0.0007  | 0.0033    | 0.0207 $\pm$ 0.0011 | 860.5072 | 446.0277 | 0.0242 $\pm$ 0.0037 | 10304.7521 | 8042.6306 | 0.0237 $\pm$ 0.0037 | 10522.1519 | 8167.1831 | 0.0001 $\pm$ 0.0000 | 0.0006            | 0.0490 $\pm$ 0.0096 | 0.0750    | 0.0718        |
+
+Table 6 shows the effects of OSNs on throughput and latency during the order phase. There are $k=3, 9, 15$ OSNs in cluster 2 of a 10 Gbit/s Ethernet network. The BatchSize is 5 and the BatchTimeout is 1. It validates the model of throughput and latency in the order phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $k$
+    <ul>
+      <li> Explanation: The number of ordering service nodes in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\lambda^r$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^r$
+    <ul>
+      <li> Explanation: The maximum throughput of the ordering service in the order phase.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes, i.e., $k=3$, is $\mu^r=1500$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^r$
+    <ul>
+      <li> Explanation: The utilization of the ordering service in the order phase, where we can derive $\rho^r=\lambda^r/ \mu^r$.</li>
+      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes is $\mu^r=1500$ transactions per second, $\lambda^r=244$ transactions per second, and hence $\rho^r=\lambda^r/ \mu^r=244/1500=0.1627$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^r$
+    <ul>
+      <li> Explanation: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r$.</li>
+      <li> Example 1: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r=1/1500=0.0006$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^r$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_w^r$
+    <ul>
+      <li> Explanation: The waiting time of a transaction in the order phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{c2l}^r$, $T_{l2f}^r$
+    <ul>
+      <li> Explanation: The communication latency spent between the client and the ordering service.</li>
+      <li> Example 1: The number of ordering service nodes be $k=3$ and the transaction arrival rate be $\lambda^r=244$ transactions per second, we have the queueing latency $T_q^r=0.0000$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.0450$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0237$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.0104$. And when $n=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=486.3114$ Mbps, $\beta_{l2f}^r=1132.2699$ Mbps, from which the model has an overall latency $T^r=0.0328$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+#### 4.7. Validate Phase in Cluster 1
+
+Table 7. The effects of an HDD of 63 IOps on the throughput and latency in the validate phase. There is a committing peer in cluster 1 of 1 Gbps Ethernet network. The BatchSize is 20, 50. And the BatchTimeout is 1.
+
+|           | Measure derived |         |          |         | Measure             |         |         |                      |            |         |                        |              |         |                     |                   |                     |                     | Our model |               |                 |
+| --------- | --------------- | ------- | -------- | ------- | ------------------- | ------- | ------- | -------------------- | ---------- | ------- | ---------------------- | ------------ | ------- | ------------------- | ----------------- | ------------------- | ------------------- | --------- | ------------- | --------------- |
+| BatchSize | $\lambda^v$     | $\mu^v$ | $\rho^v$ | $T_s^v$ | Our $T_{comm}^v$    | Our BW  | avg BW  | $M/M/1$ $T_{comm}^v$ | $M/M/1$ BW | avg BW  | $M/E_r/1$ $T_{comm}^v$ | $M/E_r/1$ BW | avg BW  | Our $T_{q}^v$       | $M/M/1$ $T_{q}^v$ | $M/E_r/1$ $T_{q}^v$ | $T^v$               | $T^v$     | $M/M/1$ $T^v$ | $M/E_r/1$ $T^v$ |
+| 20        | 65              | 85      | 0.7647   | 0.0118  | 0.6019 $\pm$ 0.1360 | 2.5310  | 2.9901  | 0.6019 $\pm$ 0.1360  | 2.5310     | 3.0620  | 0.5956 $\pm$ 0.1360    | 2.5578       | 2.8406  | 0.0224 $\pm$ 0.0003 | 0.0382            | 0.0287              | 0.6361 $\pm$ 0.1358 | 0.5437    | 0.5475        | 0.5768          |
+| 20        | 82              | 85      | 0.9647   | 0.0118  | 0.5572 $\pm$ 0.1717 | 3.4492  | 2.9901  | 0.5349 $\pm$ 0.1717  | 3.5930     | 3.0620  | 0.6153 $\pm$ 0.1717    | 3.1235       | 2.8406  | 0.2993 $\pm$ 0.0126 | 0.3216            | 0.2412              | 0.8683 $\pm$ 0.1839 | 0.9538    | 0.9611        | 0.9296          |
+| 50        | 65              | 185     | 0.3514   | 0.0054  | 0.222 $\pm$ 0.0411  | 6.8623  | 10.2041 | 0.2194 $\pm$ 0.0411  | 6.9437     | 10.4442 | 0.2201 $\pm$ 0.0411    | 6.9216       | 10.3204 | 0.0003 $\pm$ 0.0005 | 0.0029            | 0.0022              | 0.2277 $\pm$ 0.0415 | 0.1550    | 0.1542        | 0.1552          |
+| 50        | 109             | 185     | 0.5795   | 0.0054  | 0.2573 $\pm$ 0.0619 | 9.9288  | 10.2041 | 0.2522 $\pm$ 0.0619  | 10.1296    | 10.4442 | 0.2542 $\pm$ 0.0619    | 10.0499      | 10.3204 | 0.0027 $\pm$ 0.0003 | 0.0078            | 0.0058              | 0.2654 $\pm$ 0.0619 | 0.2585    | 0.2578        | 0.2587          |
+| 50        | 142             | 185     | 0.7676   | 0.0054  | 0.2408 $\pm$ 0.0412 | 13.8211 | 10.2041 | 0.2334 $\pm$ 0.0412  | 14.2593    | 10.4442 | 0.2379 $\pm$ 0.0412    | 13.9896      | 10.3204 | 0.0105 $\pm$ 0.0020 | 0.0179            | 0.0134              | 0.2567 $\pm$ 0.0403 | 0.3421    | 0.3420        | 0.3413          |
+
+Table 6 shows the effects of an HDD of 63 IOs per second on the throughput and latency in the validate phase. There is a committing peer in the local cluster of a 1 Gbit/s Ethernet network. The BatchSize is 20, 50, respectively, and the BatchTimeout is 1. It validates the model of throughput and latency of a committing peer in the validate phase. The details of performance metrics are as follows:
+
+<ul>
+
+  <li> Performance metric - $\lambda^v$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the validate phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^v$
+    <ul>
+      <li> Explanation: The maximum throughput of a committing peer in the validate phase.</li>
+      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 20 is $\mu^v=85$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^v$
+    <ul>
+      <li> Explanation: The utilization of a committing peer in the validate phase, where we can derive $\rho^v=\lambda^v/ \mu^v$.</li>
+      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 20 in the validate phase is $\mu^v=85$, $\lambda^v=65$ transactions per second, and hence $\rho^v=\lambda^v/ \mu^v=65/85=0.7647$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^v$
+    <ul>
+      <li> Explanation: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v$.</li>
+      <li> Example 1: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v=1/85=0.0118$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^v$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the validate phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{comm}^v$
+    <ul>
+      <li> Explanation: The communication latency spent in the validate phase.</li>
+      <li> Example 1: The transaction arrival rate $\lambda^v=65$ transactions per second, we have the queueing latency $T_q^v=0.0224$ seconds. We measure the overall latency of a transaction spent in the validate phase $T^v=0.6361$ seconds. And when a BatchSize of 20, the average effective network bandwidth is stable around $\beta^v=2.9901$ Mbps, from which the model has an overall latency $T^v=0.5437$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+
+#### 4.8. Validate Phase in Cluster 2
+
+Table 8. The effects of an SSD of 1490 IOps on the throughput and latency in the validate phase. There is a committing peer in cluster 2 of 10 Gbps Ethernet network. The BatchSize is 2, 5. And the BatchTimeout is 1.
+
+|           | Measure derived |         |          |         | Measure             |         |         |                      |            |         |                        |              |         |                     |                   |                     |                     | Our model |               |                 |
+| --------- | --------------- | ------- | -------- | ------- | ------------------- | ------- | ------- | -------------------- | ---------- | ------- | ---------------------- | ------------ | ------- | ------------------- | ----------------- | ------------------- | ------------------- | --------- | ------------- | --------------- |
+| BatchSize | $\lambda^v$     | $\mu^v$ | $\rho^v$ | $T_s^v$ | Our $T_{comm}^v$    | Our BW  | avg BW  | $M/M/1$ $T_{comm}^v$ | $M/M/1$ BW | avg BW  | $M/E_r/1$ $T_{comm}^v$ | $M/E_r/1$ BW | avg BW  | Our $T_{q}^v$       | $M/M/1$ $T_{q}^v$ | $M/E_r/1$ $T_{q}^v$ | $T^v$               | Our $T^v$ | $M/M/1$ $T^v$ | $M/E_r/1$ $T^v$ |
+| 2         | 78              | 180     | 0.4333   | 0.0056  | 0.0515 $\pm$ 0.0086 | 35.4976 | 34.0017 | 0.048 $\pm$ 0.0086   | 38.0859    | 36.8071 | 0.049 $\pm$ 0.0086     | 37.3087      | 35.7058 | 0.0007 $\pm$ 0.0001 | 0.0042            | 0.0032              | 0.0578 $\pm$ 0.0086 | 0.0601    | 0.0595        | 0.0600          |
+| 2         | 90              | 180     | 0.5000   | 0.0056  | 0.0448 $\pm$ 0.0068 | 47.0843 | 34.0017 | 0.0406 $\pm$ 0.0068  | 51.9550    | 36.8071 | 0.042 $\pm$ 0.0068     | 50.2232      | 35.7058 | 0.0014 $\pm$ 0.0004 | 0.0056            | 0.0042              | 0.0518 $\pm$ 0.0068 | 0.0690    | 0.0685        | 0.0689          |
+| 2         | 150             | 180     | 0.8333   | 0.0056  | 0.181 $\pm$ 0.0253  | 19.4233 | 34.0017 | 0.1725 $\pm$ 0.0253  | 20.3804    | 36.8071 | 0.1795 $\pm$ 0.0253    | 19.5857      | 35.7058 | 0.0193 $\pm$ 0.0082 | 0.0278            | 0.0208              | 0.2059 $\pm$ 0.0220 | 0.1283    | 0.1289        | 0.1249          |
+| 5         | 78              | 1490    | 0.0523   | 0.0007  | 0.0347 $\pm$ 0.0100 | 52.6837 | 71.7767 | 0.0347 $\pm$ 0.0100  | 52.6837    | 71.8288 | 0.0347 $\pm$ 0.0100    | 52.6837      | 71.7767 | 0.0000 $\pm$ 0.0000 | 0.0000            | 0.0000              | 0.0354 $\pm$ 0.0100 | 0.0262    | 0.0262        | 0.0262          |
+| 5         | 90              | 1490    | 0.0604   | 0.0007  | 0.0355 $\pm$ 0.0129 | 59.4190 | 71.7767 | 0.0355 $\pm$ 0.0129  | 59.4190    | 71.8288 | 0.0355 $\pm$ 0.0129    | 59.4190      | 71.7767 | 0.0000 $\pm$ 0.0000 | 0.0000            | 0.0000              | 0.0362 $\pm$ 0.0129 | 0.0301    | 0.0301        | 0.0301          |
+| 5         | 150             | 1490    | 0.1007   | 0.0007  | 0.0417 $\pm$ 0.0085 | 84.3076 | 71.7767 | 0.0417 $\pm$ 0.0085  | 84.3076    | 71.8288 | 0.0417 $\pm$ 0.0085    | 84.3076      | 71.7767 | 0.0000 $\pm$ 0.0000 | 0.0000            | 0.0000              | 0.0424 $\pm$ 0.0085 | 0.0497    | 0.0496        | 0.0497          |
+| 5         | 214             | 1490    | 0.1436   | 0.0007  | 0.0531 $\pm$ 0.0157 | 94.4562 | 71.7767 | 0.053 $\pm$ 0.0157   | 94.6344    | 71.8288 | 0.0531 $\pm$ 0.0157    | 94.4562      | 71.7767 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0000              | 0.0538 $\pm$ 0.0157 | 0.0706    | 0.0706        | 0.0706          |
+| 5         | 240             | 1490    | 0.1611   | 0.0007  | 0.0827 $\pm$ 0.0099 | 68.0169 | 71.7767 | 0.0826 $\pm$ 0.0099  | 68.0993    | 71.8288 | 0.0827 $\pm$ 0.0099    | 68.0169      | 71.7767 | 0.0000 $\pm$ 0.0000 | 0.0001            | 0.0000              | 0.0834 $\pm$ 0.0099 | 0.0791    | 0.0791        | 0.0791          |
+
+<ul>
+
+  <li> Performance metric - $\lambda^v$
+    <ul>
+      <li> Explanation: The transaction arrival rate in transactions per second in the validate phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\mu^v$
+    <ul>
+      <li> Explanation: The maximum throughput of a committing peer in the validate phase.</li>
+      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 2 is $\mu^v=180$ transactions per second.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $\rho^v$
+    <ul>
+      <li> Explanation: The utilization of a committing peer in the validate phase, where we can derive $\rho^v=\lambda^v/ \mu^v$.</li>
+      <li> Example 1: The maximum throughput of a committing peer with a BatchSize of 2 in the validate phase is $\mu^v=180$, $\lambda^v=78$ transactions per second, and hence $\rho^v=\lambda^v/ \mu^v=78/180=0.4333$.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_s^v$
+    <ul>
+      <li> Explanation: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v$.</li>
+      <li> Example 1: The service time of a transaction in the validate phase, where we can derive $T_s^v=1/ \mu^v=1/180=0.0056$ seconds.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_q^v$
+    <ul>
+      <li> Explanation: The queueing latency of a transaction in the validate phase.</li>
+    </ul>
+  </li>
+
+  <li> Performance metric - $T_{comm}^v$
+    <ul>
+      <li> Explanation: The communication latency spent in the validate phase.</li>
+      <li> Example 1: The transaction arrival rate $\lambda^v=78$ transactions per second, we have the queueing latency $T_q^v=0.0007$ seconds. We measure the overall latency of a transaction spent in the validate phase $T^v=0.0578$ seconds. And when a BatchSize of 2, the average effective network bandwidth is stable around $\beta^v=35.4976$ Mbps, from which the model has an overall latency $T^v=0.0601$ seconds.</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+
+
+## License
+
+Hyperledger_Fabric_Phase_Bench source code is available under the MIT License 2026.
+
+
+## Reference
+[1. Hyperledger Fabric] https://github.com/hyperledger/fabric/tree/v2.2.0 <br>
+[2. Hyperledger Fabric Dynamic Channel Update] https://hyperledger-fabric.readthedocs.io/en/release-2.2/config_update.html <br>
+[3. Hyperledger Fabric SDK for node.js] https://hyperledger.github.io/fabric-sdk-node/release-1.4/module-fabric-network.html
