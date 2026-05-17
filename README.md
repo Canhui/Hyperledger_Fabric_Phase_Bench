@@ -7,12 +7,12 @@ Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperled
 
 #### 2.1. Cluster Environment
 
-Please see section A of the tutorial for preparation of multiple computing nodes on the cloud.
+Please see [section A](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for preparation of multiple computing nodes on the cloud.
 
 
 #### 2.2. Single-Node Test
 
-Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.
+Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on%20tutorial/Hands-on%20Tutorial.pdf) of the tutorial for preparation of single-node test of Hyperledger Fabric network.
 
 
 #### 2.3. Workload Generator
@@ -20,8 +20,8 @@ Please see section B of the tutorial for preparation of single-node test of Hype
 <ul>
   <li> Q1: How to generate a transaction via Node.js SDK?
     <ul>
-      <li>For invoke a transaction, please see invoke.js under the workload folder.</li>
-      <li>For query a transaction, please see query.js under the worklaod folder.</li>
+      <li>For invoke a transaction, please see [invoke.js](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp01-fabric-samples/demo-first/workload/sdk-peer0-org1/invoke.js) under the workload folder.</li>
+      <li>For query a transaction, please see [query.js](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp01-fabric-samples/demo-first/workload/sdk-peer0-org1/query.js) under the worklaod folder.</li>
     </ul>
   </li>
 
