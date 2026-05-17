@@ -1,5 +1,5 @@
 ## 1. Hands-on Tutorial
-Please find the Hands-on Tutorial in [MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.docx)[4.18 MB, 109 Pages] or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) [3.60 MB, 109 Pages].
+Please find the Hands-on Tutorial in [[MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.docx), 4.18 MB, 109 Pages] or in [PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) [3.60 MB, 109 Pages].
 
 
 
