@@ -21,7 +21,7 @@ Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/
   <li> Q1: How to generate a transaction via Node.js SDK?
     <ul>
       <li>For invoke a transaction, please see [invoke.js](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp01-fabric-samples/demo-first/workload/sdk-peer0-org1/invoke.js) under the workload folder.</li>
-      <li>For query a transaction, please see [query.js](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp01-fabric-samples/demo-first/workload/sdk-peer0-org1/query.js) under the worklaod folder.</li>
+      <li>For query a transaction, please see [query.js](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Exp01-fabric-samples/demo-first/workload/sdk-peer0-org1/query.js) under the worklaod <a href="url">link text</a> folder.</li>
     </ul>
   </li>
 
