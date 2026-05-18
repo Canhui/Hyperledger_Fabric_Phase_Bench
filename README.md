@@ -692,7 +692,7 @@ Table 8. The effects of an SSD of 1490 IOps on the throughput and latency in the
 
 ## License
 
-Hyperledger_Fabric_Phase_Bench source code is available under the MIT License 2026.
+Hyperledger_Fabric_Phase_Bench source code is available under the MIT License (Year 2026).
 
 
 ## Reference
