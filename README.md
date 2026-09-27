@@ -1,21 +1,32 @@
-## 1. Hands-on Tutorial
+### 1. Online Source Code for the Paper
+
+#### [*Client-Driven Performance Model of Hyperledger Fabric Blockchain via Phase Decomposition*](https://ieeexplore.ieee.org/document/11677710)
+
+by Canhui Wang, Xiaowen Chu 
+
+Published in [*IEEE Transactions on Network Science and Engineering*](https://ieeexplore.ieee.org/document/11677710), Sep 2026.
+
+&nbsp; 
+
+
+### 2. Hands-on Tutorial
 Please find the Hands-on Tutorial in [[MS Doc](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.docx), 4.18 MB, 109 Pages] or in [[PDF](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf), 3.60 MB, 109 Pages].
 
+&nbsp; 
 
+### 3. Preparation
 
-## 2. Preparation
-
-#### 2.1. Cluster Environment
+#### 3.1. Cluster Environment
 
 Please see [section A](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of multiple computing nodes on the cloud.
 
 
-#### 2.2. Single-Node Test
+#### 3.2. Single-Node Test
 
 Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for preparation of single-node test of Hyperledger Fabric network.
 
 
-#### 2.3. Workload Generator
+#### 3.3. Workload Generator
 
 <ul>
   <li> Q1: How to generate a transaction via Node.js SDK?
@@ -41,35 +52,36 @@ Please see [section B](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/
 </ul>
 
 
+&nbsp; 
 
-## 3. Experiments
+### 4. Experiments
 
-#### 3.1. Multiple-Nodes Test
+#### 4.1. Multiple-Nodes Test
 
 Please see [section 1, 2, 3](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes test of Hyperledger Fabric.
 
-#### 3.2. Multiple-Nodes Run
+#### 4.2. Multiple-Nodes Run
 
 Please see [section 4](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for multiple-nodes running of Hyperledger Fabric, e.g., 7 CLI on 7 endorsing peers, 1 non-endorsing peer, 15 ordering service nodes.
 
-#### 3.3. Dynamic Adjustment of Block Parameters
+#### 4.3. Dynamic Adjustment of Block Parameters
 
 Please see [section 5](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for dynamic adjustment of block parameters on single ordering service node; [section 6](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple ordering service nodes; [section 7](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on single peer; and [section 8](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) for dynamic adjustment of block parameters on multiple peers.
 
-#### 3.4. Different Transaction Payoff Sizes 
+#### 4.4. Different Transaction Payoff Sizes 
 
 Please see [section 9](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different transaction payoff sizes.
 
-#### 3.5. Different Chaincodes 
+#### 4.5. Different Chaincodes 
 
 Please see [section 10](https://github.com/Canhui/Hyperledger_Fabric_Phase_Bench/blob/main/Hands-on-tutorial/Hands-on-Tutorial.pdf) of the tutorial for different chaincodes.
 
+&nbsp; 
 
 
+### 5. Numerical Calculations and Results
 
-## 4. Numerical Calculations and Results
-
-#### 4.1. Execute Phase in Cluster 1
+#### 5.1. Execute Phase in Cluster 1
 
 Table 1. Throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU cores in cluster 1
 
@@ -155,7 +167,7 @@ Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 </ul>
 
 
-#### 4.2. Execute Phase in Cluster 2
+#### 5.2. Execute Phase in Cluster 2
 
 Table 2. The throughput and latency of an endorsing peer with $c=1,2,4$ CPU cores in cluster 2.
 
@@ -238,7 +250,7 @@ Table 2 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ C
 
 
 
-#### 4.3. Order Phase with a BatchSize of 20 in Cluster 1
+#### 5.3. Order Phase with a BatchSize of 20 in Cluster 1
 
 Table 3. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 1 of 1 Gbit/s Ethernet network. The BatchSize is 20 and the BatchTimeout is 1.
 
@@ -314,7 +326,7 @@ Table 3 shows the effects of OSNs on throughput and latency during the order pha
 </ul>
 
 
-#### 4.4. Order Phase with a BatchSize of 50 in Cluster 1
+#### 5.4. Order Phase with a BatchSize of 50 in Cluster 1
 
 Table 4. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 1 of 1 Gbit/s Ethernet network. The BatchSize is 50 and the BatchTimeout is 1.
 
@@ -396,7 +408,7 @@ Table 4 shows the effects of OSNs on throughput and latency during the order pha
 </ul>
 
 
-#### 4.5. Order Phase with a BatchSize of 2 in Cluster 2
+#### 5.5. Order Phase with a BatchSize of 2 in Cluster 2
 
 Table 5. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 2 of 10 Gbit/s Ethernet network. The BatchSize is 2 and the BatchTimeout is 1.
 
@@ -481,7 +493,7 @@ Table 5 shows the effects of OSNs on throughput and latency during the order pha
 </ul>
 
 
-#### 4.6. Order Phase with a BatchSize of 5 in Cluster 2
+#### 5.6. Order Phase with a BatchSize of 5 in Cluster 2
 
 Table 6. The effects of OSNs on the throughput and latency in the order phase. There are $k=3,9,15$ OSNs in cluster 2 of 10 Gbit/s Ethernet network. The BatchSize is 5 and the BatchTimeout is 1.
 
@@ -566,7 +578,7 @@ Table 6 shows the effects of OSNs on throughput and latency during the order pha
 </ul>
 
 
-#### 4.7. Validate Phase in Cluster 1
+#### 5.7. Validate Phase in Cluster 1
 
 Table 7. The effects of an HDD of 63 IOps on the throughput and latency in the validate phase. There is a committing peer in cluster 1 of 1 Gbps Ethernet network. The BatchSize is 20, 50. And the BatchTimeout is 1.
 
@@ -627,7 +639,7 @@ Table 6 shows the effects of an HDD of 63 IOs per second on the throughput and l
 
 
 
-#### 4.8. Validate Phase in Cluster 2
+#### 5.8. Validate Phase in Cluster 2
 
 Table 8. The effects of an SSD of 1490 IOps on the throughput and latency in the validate phase. There is a committing peer in cluster 2 of 10 Gbps Ethernet network. The BatchSize is 2, 5. And the BatchTimeout is 1.
 
@@ -688,14 +700,15 @@ Table 8. The effects of an SSD of 1490 IOps on the throughput and latency in the
 </ul>
 
 
+&nbsp; 
 
-
-## License
+### License
 
 Hyperledger_Fabric_Phase_Bench source code is available under the MIT License (Year 2026).
 
+&nbsp; 
 
-## Reference
+### Reference
 [1. Hyperledger Fabric] https://github.com/hyperledger/fabric/tree/v2.2.0 <br>
 [2. Hyperledger Fabric Dynamic Channel Update] https://hyperledger-fabric.readthedocs.io/en/release-2.2/config_update.html <br>
 [3. Hyperledger Fabric SDK for node.js] https://hyperledger.github.io/fabric-sdk-node/release-1.4/module-fabric-network.html
